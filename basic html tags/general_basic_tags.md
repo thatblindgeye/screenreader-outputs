@@ -1,12 +1,5 @@
 #General Basic Tags
 
-## Some quick notes
-
-Tags such as `<b>`, `<em>`, `<i>`, `mark`, `<strong>`, and `<u>` may not be announced by a screen reader with any emphassis.
-
-ARIA Landmark tags are: `<article>`, `<aside>`, `<footer>`, `<form>`, `<header>`, `<main>`, `<nav>`, and `<section>`. These semantic tags can help screen reader users navigate through a web page.
-
-The `<div>` and `<span>` tags do not have any special announcement from a screen reader on their own.
 <br><br>
 
 ## `<b>`, `<em>`, `<i>`, `mark`, `<strong>`, and `<u>`
