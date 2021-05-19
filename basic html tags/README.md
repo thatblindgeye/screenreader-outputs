@@ -10,13 +10,22 @@ ARIA Landmark tags are: `<article>`, `<aside>`, `<footer>`, `<form>`, `<header>`
 
 The `<div>` and `<span>` tags do not have any special announcement from a screen reader on their own.
 
-[General Basic Tags](#)
-[<a> Tags](#)
-[<abbr> and <dfn> Tags](#)
-[<audio> Tags](#)
-[<button> Tags](#)
-[<input> Tags](#)
-[<label> Tags](#)
-[<meter> and <progress> Tags](#)
-[<time> Tags](#)
-[<video> Tags](#)
+[General Basic Tags](https://github.com/thatblindgeye/screenreader-outputs/blob/main/basic%20html%20tags/general_basic_tags.md)
+<br>
+[`<a>` Tags](https://github.com/thatblindgeye/screenreader-outputs/blob/main/basic%20html%20tags/a_tags.md)
+<br>
+[`<abbr>` and `<dfn>` Tags](https://github.com/thatblindgeye/screenreader-outputs/blob/main/basic%20html%20tags/abbr_dfn_tags.md)
+<br>
+[`<audio>` Tags](https://github.com/thatblindgeye/screenreader-outputs/blob/main/basic%20html%20tags/audio_tags.md)
+<br>
+[`<button>` Tags](https://github.com/thatblindgeye/screenreader-outputs/blob/main/basic%20html%20tags/button_tags.md)
+<br>
+[`<input>` Tags](https://github.com/thatblindgeye/screenreader-outputs/blob/main/basic%20html%20tags/input_tags.md)
+<br>
+[`<label>` Tags](https://github.com/thatblindgeye/screenreader-outputs/blob/main/basic%20html%20tags/label_tags.md)
+<br>
+[`<meter>` and `<progress>` Tags](https://github.com/thatblindgeye/screenreader-outputs/blob/main/basic%20html%20tags/meter_and_progress_tags.md)
+<br>
+[`<time>` Tags](https://github.com/thatblindgeye/screenreader-outputs/blob/main/basic%20html%20tags/time_tags.md)
+<br>
+[`<video>` Tags](https://github.com/thatblindgeye/screenreader-outputs/blob/main/basic%20html%20tags/video_tags.md)
