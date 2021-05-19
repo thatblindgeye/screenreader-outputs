@@ -1,4 +1,4 @@
-#General Basic Tags
+# General Basic Tags
 
 <br><br>
 
@@ -47,6 +47,7 @@
 **Screen reader:** "John Smith, one two three Fake Street, Fakesville Ohio, one two three four five."
 
 **Examples Note:** The screen reader did not give any indication that the first example was using an `<address>` tag nor was there any discernible difference between either example, but the `<address>` tag should still be used for semantics.
+
 <br><br>
 
 ## `<blockquote>`
@@ -64,6 +65,7 @@
     </p>
 
 **Example Note:** The screen reader only announced the text as though it were a normal string of text, without any indication that it was a blockquote.
+
 <br><br>
 
 ## `<cite>`
@@ -107,6 +109,8 @@
     <p>My favorite color is <del>red</del> <ins>purple.</ins></p>
 
 **Screen reader:** "My favorite color is red deleted purple inserted."
+
+<br><br>
 
 ## `<dialog>`
 
