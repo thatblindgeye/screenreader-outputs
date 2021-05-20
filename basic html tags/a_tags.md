@@ -22,7 +22,7 @@
 
 **Screen reader (Chrome):** "download image link"
 
-**Example note:** The screen reader did not announce what the image being downloaded is. Keep in mind that links should either explicitly state what they are linking to, or the context surrounding the link should state that.
+**Example note:** The screen reader did not announce what the image being downloaded is. Keep in mind that links should usually explicitly state what they are linking to. Check out [this article on accessible links from the A11y Project](https://www.a11yproject.com/posts/2019-02-15-creating-valid-and-accessible-links/) for a better understanding.
 
 <br>
 
