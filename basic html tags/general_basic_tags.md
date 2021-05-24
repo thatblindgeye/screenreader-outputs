@@ -20,7 +20,7 @@
     
 **Screen reader:** "This is a sentence with emphasized text."
 
-**Examples Note:** There is no discernible emphasis in any of the above examples, but the appropriate tag should still be used when applicable.
+**Examples Notes:** There is no discernible emphasis in any of the above examples, but the appropriate tag should still be used when applicable.
 
 <br>
 
@@ -46,7 +46,7 @@
 
 **Screen reader:** "John Smith, one two three Fake Street, Fakesville Ohio, one two three four five."
 
-**Examples Note:** The screen reader did not give any indication that the first example was using an `<address>` tag nor was there any discernible difference between either example, but the `<address>` tag should still be used for semantics.
+**Examples Note:** The screen reader did not give any indication that the first example was using an `<address>` tag nor was there any discernible difference between either example, but the `<address>` tag should still be used when applicable.
 
 <br><br>
 
@@ -56,7 +56,9 @@
         W3C's primary activity is to develop protocols and guidelines that ensure long-term growth for the Web. W3C's standards define key parts of what makes the World Wide Web work. Learn more about W3C's mission.
     </blockquote>
 
-**Screen reader announces:** "blockquote W3C's primary activity is to develop protocols and guidelines that ensure long-term growth for the Web. W3C's standards define key parts of what makes the World Wide Web work. Learn more about W3C's mission out of blockquote".
+**Screen reader:** "blockquote W3C's primary activity is to develop protocols and guidelines that ensure long-term growth for the Web. W3C's standards define key parts of what makes the World Wide Web work. Learn more about W3C's mission out of blockquote".
+
+**Example Notes:** the "blockquote" and "out of blockquote" text was only announced when the screen reader was reading the contents of the page, or when navigating the page using the `up arrow` and `down arrow` keys.
 
 <br>
 
@@ -64,7 +66,7 @@
         W3C's primary activity is to develop protocols and guidelines that ensure long-term growth for the Web. W3C's standards define key parts of what makes the World Wide Web work. Learn more about W3C's mission.
     </p>
 
-**Example Note:** The screen reader only announced the text as though it were a normal string of text, without any indication that it was a blockquote.
+**Screen reader:** "W3C's primary activity is to develop protocols and guidelines that ensure long-term growth for the Web. W3C's standards define key parts of what makes the World Wide Web work. Learn more about W3C's mission".
 
 <br><br>
 
@@ -76,7 +78,7 @@
 
 **Screen reader:** "The Starry Night by Vincent Van Gogh"
 
-**Examples Note:** The screen reader did not give any indication that the first example was using a `<cite>` tag nor was there any discernible difference between either example, but the `<cite>` tag should still be used when applicable.
+**Examples Notes:** The screen reader did not give any indication that the first example was using a `<cite>` tag nor was there any discernible difference between either example, but the `<cite>` tag should still be used when applicable.
 
 <br><br>
 
@@ -88,7 +90,7 @@
 
 **Screen reader:** "The code HTML tag should be used to define text as computer code."
 
-**Examples Note:** The screen reader did not give any indication of which part of the text was inside the `<code>` tag, but the tag should still be used when applicable.
+**Examples Notes:** The screen reader did not give any indication of which part of the text was inside the `<code>` tag, but the tag should still be used when applicable.
 
 <br><br>
 
@@ -100,7 +102,7 @@
 
 **Screen reader:** "HP laptop."
 
-**Examples Note:** The screen reader did not give any indication that the first example was using a `<data>` tag nor was there any discernible difference between either example, but the `<data>` tag should still be used when applicable.
+**Examples Notes:** The screen reader did not give any indication that the first example was using a `<data>` tag nor was there any discernible difference between either example, but the `<data>` tag should still be used when applicable.
 
 <br><br>
 
@@ -108,7 +110,7 @@
 
     <p>My favorite color is <del>red</del> <ins>purple.</ins></p>
 
-**Screen reader:** "My favorite color is red deleted purple inserted."
+**Screen reader:** "My favorite color is deleted red inserted purple."
 
 <br><br>
 
@@ -118,17 +120,15 @@
 
 **Screen reader:** "Dialog."
 
-**Example Note:** The screen reader did not announce the text content of the dialog tag itself. 
+**Example Notes:** The screen reader did not announce the text content of the dialog tag itself. 
 
 <br>
 
     <dialog open tabindex='0'>Thank you for checking out this repo!</dialog>
 
-**Screen reader:** "Dialog thank you for checking out this repo."
+**Screen reader (using the `tab` key to navigate the page):** "Dialog thank you for checking out this repo."
 
-**Example Note:** The screen reader only announced the text content of the dialog when using the tab key to navigate the page.
-
-**Note:** Check the browser/screen reader support for the `<dialog>` tag before using it.
+**Example Notes:** Check the browser/screen reader support for the `<dialog>` tag before using it.
 
 <br><br>
 
@@ -138,7 +138,7 @@
 
 **Screen reader:** "An h one tag heading level one."
 
-**Note:** The screen reader announced the other remaining 5 h tags similarly.
+**Example Notes:** The screen reader announced the other remaining 5 heading tags similarly ("an h two tag heading level two", etc.).
 
 <br><br>
 
@@ -148,7 +148,7 @@
 
 **Screen reader:** "Frame..."
 
-**Example Note:** After the initial output above, the screen reader begins to announce the content inside the iframe.
+**Example Notes:** After the initial output above, the screen reader began to announce the content inside the iframe.
 
 <br>
 
@@ -156,7 +156,7 @@
 
 **Screen reader:** "Web Accessibility Initiative frame..."
 
-**Note:** The title attribute should be included to give screen readers context of the embedded content.
+**Example Notes:** The title attribute should be included to give screen readers context of the embedded content.
 
 <br><br>
 
@@ -170,11 +170,31 @@
 
     <img src="//unsplash.it/500" alt="">
 
-**Screen reader (Firefox):** "Blank."
+**Example Notes:** The screen reader did not announce the presence of the image when navigating the page with the `up arrow` and `down arrow` keys, or when the page first loaded and the screen reader announced the contents of the page.
 
-**Example Note:** Chrome did not announce anything when navigating through the page unless a tabindex of 0 was added to the image tag, and only when using the tab key to navigate the page.
+<br>
 
-**Note:** Per <a href="https://www.w3.org/WAI/tutorials/images/">WAI tutorials</a>, images that are only meant to add a visual decoration to a page (rather than convey any important value) should have a null text alternative, `alt=""`, rather than omitting the `alt` attribute.
+    <img src="//unsplash.it/500">
+    
+**Screen reader (Chrome - on page load):** "Unlabeled graphic. To get missing image descriptions, open the context menu."
+
+<br>
+
+    <img src="//unsplash.it/500" alt="" tabindex="0">
+
+**Screen reader (using the `tab` key to navigate the page):** "Blank."
+
+<br>
+
+    <img src="//unsplash.it/500" tabindex="0">
+
+**Screen reader (Firefox and Edge - using the `tab` key to navigate the page):** "600 graphic."
+
+**Screen reader (Chrome - using the `tab` key to navigate the page):** "600 Unlabelled graphic."
+
+<hr>
+
+**Notes:** When using images as decoration, the `alt` attribute should be used with an empty string rather than omitted, some some screen readers or browsers may announce such an image in some way. Checkout the W3 [Decorative Images](https://www.w3.org/WAI/tutorials/images/decorative/) page for further information.
 
 <br><br>
 
@@ -186,7 +206,7 @@
 
 **Screen reader:** "My keyboard is broken, so I have to copy and paste the t key"
 
-**Example Note:** The screen reader did not give any indication that the first example was using a `<kbd>` tag nor was there any discernible difference between either example, but the `<kbd>` tag should still be used when applicable.
+**Example Notes:** The screen reader did not give any indication that the first example was using a `<kbd>` tag nor was there any discernible difference between either example, but the `<kbd>` tag should still be used when applicable.
 
 <br><br>
 
@@ -206,9 +226,9 @@
 
 **Screen reader:** "An example of what preformatted text can look like."
 
-**Examples Note:** The screen reader did not give any indication that the first example was using a `<pre>` tag nor was there any discernible difference between either example, but the `<pre>` tag should still be used when applicable.
+**Examples Notes:** The screen reader did not give any indication that the first example was using a `<pre>` tag nor was there any discernible difference between either example, but the `<pre>` tag should still be used when applicable.
 
-**Note:** When using the `<pre>` tag to create an image with text characters, for example, one should provide an alternative caption for screen readers. Check out the [MDN page on the pre tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/pre#accessibility_concerns) for an example.
+When using the `<pre>` tag to create an image with text characters, for example, you should provide an alternative caption for screen readers. Check out the [MDN page on the pre tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/pre#accessibility_concerns) for an example.
 
 <br><br>
 
@@ -220,7 +240,7 @@
 
 **Screen reader:** "This is a quoted section of text said the paragraph tag."
 
-**Examples Note:** The screen reader did not give any indication that the first example was using a `<q>` tag nor was there any discernible difference between either example, but the `<q>` tag should still be used when applicable.
+**Examples Notes:** The screen reader did not give any indication that the first example was using a `<q>` tag nor was there any discernible difference between either example, but the `<q>` tag should still be used when applicable.
 
 <br><br>
 
@@ -229,7 +249,12 @@
     <p><s>There are 10 spots left.</s></p>
     <p>Only 2 spots left!</p>
 
+    <p>There are 10 spots left</p>
+    <p>Only 2 spots left!</p>
+
 **Screen reader:** "There are ten spots left. Only two spots left."
+
+**Examples Notes:** The screen reader did not give any indication that the first example was using an `<s>` tag nor was there any discernible difference between either example, but the `<s>` tag should still be used when applicable.
 
 <br><br>
 
@@ -241,7 +266,7 @@
 
 **Screen reader:** "An error message from a program."
 
-**Examples Note:** The screen reader did not give any indication that the first example was using a `<samp>` tag nor was there any discernible difference between either example, but the `<samp>` tag should still be used when applicable.
+**Examples Notes:** The screen reader did not give any indication that the first example was using a `<samp>` tag nor was there any discernible difference between either example, but the `<samp>` tag should still be used when applicable.
 
 <br><br>
 
@@ -253,7 +278,7 @@
 
 **Screen reader:** "Copyright twenty twenty-one Nobody Incorporated."
 
-**Examples Note:** The screen reader did not give any indication that the first example was using a `<small>` tag nor was there any discernible difference between either example, but the `<small>` tag should still be used when applicable.
+**Examples Notes:** The screen reader did not give any indication that the first example was using a `<small>` tag nor was there any discernible difference between either example, but the `<small>` tag should still be used when applicable.
 
 <br><br>
 
@@ -261,9 +286,11 @@
 
     <p>This is an example of <sub>subscript text</sub> and <sup>superscripted text</sup>.</p>
 
+    <p>This is an example of subscript text and superscripted text.</p>
+
 **Screen reader:** "This is an example of subscript text and superscript text."
 
-**Examples Note:** The screen reader did not give any indication of the text being inside the `<sub>` or `<sup>` tags, but the tags should still be used when applicable.
+**Examples Notes:** The screen reader did not give any indication that the first example was using a `<sub>` or `<sup>` tag nor was there any discernible difference between either example, but the `<sub>` or `<sup>` tags should still be used when applicable.
 
 <br><br>
 
@@ -271,9 +298,13 @@
 
     <textarea></textarea>
 
-**Screen reader:** "Edit multi-line blank"
+**Screen reader (Firefox - on page load):** "Edit multi-line out of Edit"
 
-**Example Note:** If the text area has text entered into it when navigating to it, the screen reader may announce "Edit multi-line" followed by the content of the text-area.
+**Screen reader (Chrome and Edge - on page load):** "Edit multi-line"
+
+**Screen reader (using the `tab` key to navigate the page):** "Edit multi-line blank"
+
+**Example Notes:** If the text area has text entered into it when navigating to it with the `tab` key, the screen reader may announce the content of the text-area rather than "blank".
 
 <br>
 
@@ -282,7 +313,11 @@
       <textarea></textarea>
     </label>
 
-**Screen reader:** "Leave a review, edit multi-line blank."
+**Screen reader (Firefox - on page load):** "Clickable leave a review, edit multi-line out of Edit."
+
+**Screen reader (Chrome and Edge - on page load):** "Leave a review, edit multi-line."
+
+**Screen reader (using the `tab` key to navigate the page):** "Leave a review, edit multiline blank. "
 
 <br><br>
 
