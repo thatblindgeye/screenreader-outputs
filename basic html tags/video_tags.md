@@ -25,7 +25,7 @@
 
 **Screen reader (Chrome and Edge - on page load):** "Buffering. Button play. Midnight. Button unavailable mute. Button unavailable enter full screen. Button show more media controls. Video time scrubber midnight slash zero twenty-two slider unavailable elapsed time."
 
-**Screen reader (Chrome and Edge - using the `tab` key to navigate the page):** "Play button midnight slash zero twenty-two mute button enter full screen show more media controls button more options elapsed time, midnight video time scrubber midnight slash zero twenty-two slider.
+**Screen reader (Chrome and Edge - using the `tab` key to navigate the page and give the media controls focus):** "Play button midnight slash zero twenty-two mute button enter full screen show more media controls button more options elapsed time, midnight video time scrubber midnight slash zero twenty-two slider.
 
 **Screen reader (Chrome and Edge - tabbing through each controls button):** "Play button", "Volume slider 1", "Mute button", "Enter full screen button", "Show more media controls button more options", and "Video time scrubber midnight slash zero twenty-two slider elapsed time. Midnight."
 
@@ -78,7 +78,7 @@ When pressing the "Full screen" button, the screen reader announced "Exit full s
     
 **Screen reader (Chrome and Edge - on page load):** "Grouping unavailable button unavailable play. Midnight. Button unavailable mute. Button unavailable enter full screen. Button unavailable show more media controls. Video time scrubber midnight slash midnight unavailable slider elapsed time. Midnight."
 
-**Screen reader (Chrome and Edge - using the `tab` key to navigate the page):** "Unable to play media. Grouping play button unavailable midnight mute button unavailable enter full screen button unavailable show more media controls button unavailable more options elapsed time. Midnight."
+**Screen reader (Chrome and Edge - using the `tab` key to navigate the page and give the media controls focus):** "Unable to play media. Grouping play button unavailable midnight mute button unavailable enter full screen button unavailable show more media controls button unavailable more options elapsed time. Midnight."
 
 <hr>
 
