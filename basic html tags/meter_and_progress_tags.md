@@ -4,7 +4,7 @@
 
 **Screen reader (Firefox):** "Progress bar one thousand dollars out of five thousand dollars."
 
-**Screen reader (Chrome):** "Progress bar one thousand."
+**Screen reader (Chrome and Edge):** "Progress bar one thousand."
 
 <br>
 
@@ -15,7 +15,7 @@
 
 **Screen reader (Firefox):** "Donation goal, progress bar thirty-one percent."
 
-**Screen reader (Chrome):** "Donation goal, progress bar zero point three one zero zero zero zero zero zero two three eight four one eight five eight."
+**Screen reader (Chrome and Edge):** "Donation goal, progress bar zero point three one zero zero zero zero zero zero two three eight four one eight five eight."
 
 <br>
 
@@ -26,7 +26,7 @@
 
 **Screen reader (Firefox):** "Donation goal, progress bar thirty-one percent."
 
-**Screen reader (Chrome):** "Donation goal, progress bar thirty-one."
+**Screen reader (Chrome and Edge):** "Donation goal, progress bar thirty-one."
 
 <br>
 
@@ -38,7 +38,7 @@
 
 **Screen reader (Firefox):** "Donation goal, progress bar one thousand dollars out of five thousand dollars."
 
-**Screen reader (Chrome):** "Donation goal, progress bar one thousand."
+**Screen reader (Chrome and Edge):** "Donation goal, progress bar one thousand."
 
 <br>
 
@@ -46,7 +46,7 @@
 
 **Screen reader (Firefox):** "Progress bar eighty-nine percent."
 
-**Screen reader (Chrome):** "Progress bar eighty-nine."
+**Screen reader (Chrome and Edge):** "Progress bar eighty-nine."
 
 <br>
 
@@ -57,8 +57,8 @@
 
 **Screen reader (Firefox):** "Download, progress bar eighty-nine percent."
 
-**Screen reader (Chrome):** "Download, progress bar eighty-nine."
+**Screen reader (Chrome and Edge):** "Download, progress bar eighty-nine."
 
-<br><br>
+<hr>
 
 **Note:** Although the screen reader announced both `<meter>` and `<progress>` tags similarly, they both have their own semantic purpose and should be used as such.
