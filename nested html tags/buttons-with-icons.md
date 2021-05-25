@@ -1,4 +1,4 @@
-# Buttons with icons
+# Buttons with Icons
 
 <br><br>
 
@@ -78,7 +78,7 @@
 <br><br>
 
     <button type="button">
-        <span class="material-icons-outlined">add</span>
+        <span class="material-icons">add</span>
     </button>
 
 **Screen reader:** "Button add."
@@ -86,7 +86,7 @@
 <br><br>
 
     <button type="button">
-        <span class="material-icons-outlined">add</span>
+        <span class="material-icons">add</span>
         Add to List
     </button>
 
@@ -97,7 +97,7 @@
 <br><br>
 
     <button title="Add this to a new list" type="button">
-        <span class="material-icons-outlined">add</span>
+        <span class="material-icons">add</span>
         Add to List
     </button>
 
