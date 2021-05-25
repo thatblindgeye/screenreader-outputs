@@ -1,3 +1,5 @@
+# Multi-Input Form
+
     <form>
         <fieldset>
             <legend>First Section</legend>
@@ -18,9 +20,9 @@
             </label>
             <p>Select your favorite color:</p>
             <input type="radio" id="red" name="color" value="red">
-            <label for="male">Red</label><br>
+            <label for="red">Red</label><br>
             <input type="radio" id="blue" name="color" value="blue">
-            <label for="female">Blue</label><br>
+            <label for="blue">Blue</label><br>
             <input type="radio" id="other" name="color" value="other">
             <label for="other">Other</label> 
         </fieldset>
