@@ -63,7 +63,11 @@ According to [HTML 5 and ARIA Landmarks](https://dequeuniversity.com/assets/html
     
 **Screen reader:** "Shopping list, list with three items, bullet butter, bullet milk, bullet eggs."
 
-**Examples notes:** The text "list" was repeated because the screen reader read first the `aria-label`, followed by a description of the `<ul>` elements.
+**Examples notes:** The text "list" was repeated because the screen reader read first the `aria-label`, followed by a description of the `<ul>` element.
+
+Though the screen reader did announce the `aria-label`, it may be worth following the recommendation from [Using the aria-label attribute](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-label_attribute) as noted at the top of the page.
+
+The screen reader announced "bullet" before each list item due to the CSS for the testing page not having a rule to remove the list-style-type. When the list-style-type is set to none, the screen reader did not announce "bullet". This applies to the below example as well.
 
 <br>
 
