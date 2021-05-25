@@ -5,12 +5,16 @@
 
 **Screen reader:** The screen reader did not have any output for this example.
 
+<hr>
+
     // no controls and autoplay
     <video src="./assets/video_sample.mp4" autoplay></video>
 
 **Screen reader:** The screen reader did not have any output for this example.
 
 **Example notes:** The audio automatically began playing when the page loaded.
+
+<hr>
 
     // controls and autoplay
     <video src="./assets/video_sample.mp4" autoplay></video>
@@ -37,15 +41,21 @@ When pressing the "Mute" button, the screen reader announced "Unmute" as the but
 
 When pressing the "Full screen" button, the screen reader announced "Exit full screen" after entering full screen mode, and indicated how to exit full screen by pressing the `tab` key while in full screen ("Exit full screen. E S C button").
 
+<hr>
+
     // controls
     <video src="./assets/video_sample.mp4" controls></video>
 
 **Screen reader:** This example had the same outputs as the `// controls and autoplay` example, except the audio doesn't automatically play when the page loads.
 
+<hr>
+
     // muted
     <video src="./assets/video_sample.mp4" muted></video>
 
 **Screen reader:** This example had the same outputs as the `// controls and autoplay` example, except the audio doesn't automatically play when the page loads and any announcement of a mute button was replaced with "unmute".
+
+<hr>
 
     // sources
     <video controls>
@@ -54,6 +64,8 @@ When pressing the "Full screen" button, the screen reader announced "Exit full s
     </video>
 
 **Screen reader:** This example had the same outputs as the `// controls and autoplay` example, except the audio doesn't automatically play when the page loads.
+
+<hr>
 
     // unsupported
     <video controls>
