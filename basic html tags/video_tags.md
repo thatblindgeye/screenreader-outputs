@@ -23,9 +23,9 @@
 
 **Screen reader (Firefox - tabbing through each controls button):** "Button", "Play button", "Position slider midnight slash zero twenty-three", "Mute button", "Volume slider 100", and "Full screen button".
 
-**Screen reader (Chrome and Edge - on page load):** "Buffering. Button play. Midnight. Button unavailable mute. Button unavailable enter full screen. Button show more media controls. Video time scrubber midnight slash zero twenty-two slider unavailable elapsed time."
+**Screen reader (Chrome and Edge - on page load):** "Buffering. Button play. Midnight slash zero twenty-two. Button mute. Button enter full screen. Button show more media controls. Video time scrubber midnight slash zero twenty-two slider elapsed time. Midnight."
 
-**Screen reader (Chrome and Edge - using the `tab` key to navigate the page and give the media controls focus):** "Play button midnight slash zero twenty-two mute button enter full screen show more media controls button more options elapsed time, midnight video time scrubber midnight slash zero twenty-two slider.
+**Screen reader (Chrome and Edge - using the `tab` key to navigate the page and give the media controls focus):** "Play button midnight slash zero twenty-two mute button enter full screen button show more media controls button more options elapsed time, midnight video time scrubber midnight slash zero twenty-two slider."
 
 **Screen reader (Chrome and Edge - tabbing through each controls button):** "Play button", "Volume slider 1", "Mute button", "Enter full screen button", "Show more media controls button more options", and "Video time scrubber midnight slash zero twenty-two slider elapsed time. Midnight."
 
