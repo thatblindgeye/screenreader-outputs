@@ -15,7 +15,7 @@
 
 <br><br>
 
-## `audio`
+## `audio` and `video`
 
     <audio src="./assets/sound_sample.wav" aria-label="sound sample" controls></audio>
     
@@ -30,15 +30,7 @@
 
 **Screen reader (Chrome and Edge - using the `tab` key to navigate the page and give the media controls focus):** "Sound sample grouping play button. Midnight slash three-fourteen elapsed time. Midnight audio time scrubber midnight slash three-fourteen slider mute button show more media controls."
 
-**Examples notes:** In a [previous example of the `audio` tag](https://github.com/thatblindgeye/screenreader-outputs/blob/main/basic%20html%20tags/audio_tags.md), the screen reader did not give any indication of what the audio being played was. Using the `aria-labelledby` attribute may aid in context to the audio that is tied to the audio player.
-
-Adding the `aria-hidden="true"` attribute prevented the screen reader from duplicating output of the text and from announcing the text when navigating the page using the arrow keys.
-
-Wrapping the media tag inside of a `label` tag did not provide exactly the same output as above. When using the `tab` key to navigate the page and give the audio controls focus, the screen reader did not announce the label text as it did in the example above.
-
-<br><br>
-
-## `video`
+<br>
 
     <video src="./assets/video_sample.mp4" aria-label="video sample" controls></video>
 
@@ -53,8 +45,12 @@ Wrapping the media tag inside of a `label` tag did not provide exactly the same 
 
 **Screen reader (Chrome and Edge - using the `tab` key to navigate the page and give the media controls focus):** "Video sample grouping play button midnight slash zero twenty-two mute button enter full screen button show more media controls button more options elapsed time, midnight video time scrubber midnight slash zero twenty-two slider."
 
-**Examples notes:** In a [previous example of the `video` tag](https://github.com/thatblindgeye/screenreader-outputs/blob/main/basic%20html%20tags/video_tags.md), the screen reader did not give any indication of what the video being played was. Using the `aria-labelledby` attribute may aid in context to the video that is tied to the video player.
+<hr>
+
+**Notes:** In a [previous example of the `video` tag](https://github.com/thatblindgeye/screenreader-outputs/blob/main/basic%20html%20tags/video_tags.md) and a [previous example of the `audio` tag](https://github.com/thatblindgeye/screenreader-outputs/blob/main/basic%20html%20tags/audio_tags.md), the screen reader did not give any indication of what the media being played was. Using the `aria-labelledby` attribute may aid in context to the media that is tied to the media player.
 
 Adding the `aria-hidden="true"` attribute prevented the screen reader from duplicating output of the text and from announcing the text when navigating the page using the arrow keys.
 
-Wrapping the media tag inside of a `label` tag did not provide exactly the same output as above. When using the `tab` key to navigate the page and give the video controls focus, the screen reader did not announce the label text as it did in the example above.
+Wrapping the media tag inside of a `label` tag did not provide exactly the same output as above. When using the `tab` key to navigate the page and give the media controls focus, the screen reader did not announce the label text as it did in the example above.
+
+Slightly less related to screen reader accessibility, but the MDN page on [Accessible multimedia](https://developer.mozilla.org/en-US/docs/Learn/Accessibility/Multimedia) shows how you can create a custom media player as well as how to implement audio transcripts and video text tracks (another great way to offer accessibility).
