@@ -62,3 +62,41 @@ Adding the `aria-hidden="true"` attribute prevented the screen reader from dupli
 Wrapping the media tag inside of a `label` tag did not provide exactly the same output as above. When using the `tab` key to navigate the page and give the media controls focus, the screen reader did not announce the label text as it did in the example above.
 
 Slightly less related to screen reader accessibility, but the MDN page on [Accessible multimedia](https://developer.mozilla.org/en-US/docs/Learn/Accessibility/Multimedia) shows how you can create a custom media player as well as how to implement audio transcripts and video text tracks (another great way to offer accessibility).
+
+<br><br>
+
+## Multi-Input Form
+
+    <form aria-label="A sample form">
+        <fieldset>
+            <legend id="section-one">First Section</legend>
+            <label id="name-label">
+                Name:
+                <input type="text" aria-labelledby="section-one name-label">
+            </label>
+            <label id="city-label">
+                City:
+                <input type="text" aria-labelledby="section-one city-label">
+            </label>
+        </fieldset>
+        <fieldset>
+            <legend id="section-two">Second Section</legend>
+            <label id="checkbox-label">
+                Would you like to check this checkbox?
+                <input type="checkbox" aria-labelledby="section-two checkbox-label">
+            </label>
+            <p id="color-label">Select your favorite color:</p>
+            <input type="radio" id="red" name="color" value="red" aria-labelledby="section-two color-label red-label">
+            <label for="red" id="red-label">Red</label><br>
+            <input type="radio" id="blue" name="color" value="blue" aria-labelledby="section-two color-label blue-label">
+            <label for="blue" id="blue-label">Blue</label><br>
+            <input type="radio" id="other" name="color" value="other" aria-labelledby="section-two color-label other-label">
+            <label for="other" id="other-label">Other</label> 
+        </fieldset>
+    </form>
+
+**Screen reader (Firefox - using the `tab` or arrow keys to navigate the page and give inputs focus):** "A sample form form landmark. First section grouping. First section name, edit has auto-complete blank.", "First section city, edit has auto-complete blank.", "Second section grouping. Clickable second section would you like to check this checkbox. Checkbox not checked.", "Second section select your favorite color, red, radio button not checked one of three.", "Second section select your favorite color, blue, radio button not checked two of three.", and "Second section select your favorite color, other, radio button not checked three of three.".
+
+**Screen reader (Edge and Chrome - using the `tab` or arrow keys to navigate the page and give inputs focus):** "A sample form form. First section grouping. First section name, edit blank.", "First section city, edit blank.", "Second section grouping. Second section would you like to check this checkbox. Checkbox not checked.", "Second section select your favorite color, red, radio button not checked one of three.", "Second section select your favorite color, blue, radio button not checked two of three.", and "Second section select your favorite color, other, radio button not checked three of three.".
+
+**Example notes:** You may not need so many `aria-labelledby` labels for form inputs as the radio inputs have, but this example was meant to show what can be done with ARIA labels.
