@@ -28,7 +28,7 @@
 
 **Screen reader:** "This is a sentence with marked-content highlighted out of marked-content text."
 
-<br><br>
+<hr>
 
 ## `<address>`
 
@@ -48,7 +48,7 @@
 
 **Examples Note:** The screen reader did not give any indication that the first example was using an `<address>` tag nor was there any discernible difference between either example, but the `<address>` tag should still be used when applicable.
 
-<br><br>
+<hr>
 
 ## `<blockquote>`
 
@@ -68,7 +68,7 @@
 
 **Screen reader:** "W3C's primary activity is to develop protocols and guidelines that ensure long-term growth for the Web. W3C's standards define key parts of what makes the World Wide Web work. Learn more about W3C's mission".
 
-<br><br>
+<hr>
 
 ## `<cite>`
 
@@ -80,7 +80,7 @@
 
 **Examples Notes:** The screen reader did not give any indication that the first example was using a `<cite>` tag nor was there any discernible difference between either example, but the `<cite>` tag should still be used when applicable.
 
-<br><br>
+<hr>
 
 ## `<code>`
 
@@ -92,7 +92,7 @@
 
 **Examples Notes:** The screen reader did not give any indication of which part of the text was inside the `<code>` tag, but the tag should still be used when applicable.
 
-<br><br>
+<hr>
 
 ## `<data>`
 
@@ -104,7 +104,7 @@
 
 **Examples Notes:** The screen reader did not give any indication that the first example was using a `<data>` tag nor was there any discernible difference between either example, but the `<data>` tag should still be used when applicable.
 
-<br><br>
+<hr>
 
 ## `<del>` and `<ins>`
 
@@ -112,7 +112,7 @@
 
 **Screen reader:** "My favorite color is deleted red inserted purple."
 
-<br><br>
+<hr>
 
 ## `<dialog>`
 
@@ -130,7 +130,7 @@
 
 **Example Notes:** Check the browser/screen reader support for the `<dialog>` tag before using it.
 
-<br><br>
+<hr>
 
 ## `<h1>` to `<h6>`
 
@@ -140,7 +140,7 @@
 
 **Example Notes:** The screen reader announced the other remaining 5 heading tags similarly ("an h two tag heading level two", etc.).
 
-<br><br>
+<hr>
 
 ## `<iframe>`
 
@@ -158,7 +158,7 @@
 
 **Example Notes:** The title attribute should be included to give screen readers context of the embedded content.
 
-<br><br>
+<hr>
 
 ## `<img>`
 
@@ -192,11 +192,11 @@
 
 **Screen reader (Chrome - using the `tab` key to navigate the page):** "600 Unlabelled graphic."
 
+<br>
+
+**Notes:** When using images as decoration, the `alt` attribute should be used with an empty string rather than omitted. If simply omitted, some screen readers or browsers may announce the image in some way when it shouldn't/doesn't need to. Checkout the W3 [Decorative Images](https://www.w3.org/WAI/tutorials/images/decorative/) page for further information.
+
 <hr>
-
-**Notes:** When using images as decoration, the `alt` attribute should be used with an empty string rather than omitted, some some screen readers or browsers may announce such an image in some way. Checkout the W3 [Decorative Images](https://www.w3.org/WAI/tutorials/images/decorative/) page for further information.
-
-<br><br>
 
 ## `<kbd>`
 
@@ -208,7 +208,7 @@
 
 **Example Notes:** The screen reader did not give any indication that the first example was using a `<kbd>` tag nor was there any discernible difference between either example, but the `<kbd>` tag should still be used when applicable.
 
-<br><br>
+<hr>
 
 ## `<pre>`
 
@@ -230,7 +230,7 @@
 
 When using the `<pre>` tag to create an image with text characters, for example, you should provide an alternative caption for screen readers. Check out the [MDN page on the pre tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/pre#accessibility_concerns) for an example.
 
-<br><br>
+<hr>
 
 ## `<q>`
 
@@ -242,7 +242,7 @@ When using the `<pre>` tag to create an image with text characters, for example,
 
 **Examples Notes:** The screen reader did not give any indication that the first example was using a `<q>` tag nor was there any discernible difference between either example, but the `<q>` tag should still be used when applicable.
 
-<br><br>
+<hr>
 
 ## `<s>`
 
@@ -256,7 +256,7 @@ When using the `<pre>` tag to create an image with text characters, for example,
 
 **Examples Notes:** The screen reader did not give any indication that the first example was using an `<s>` tag nor was there any discernible difference between either example, but the `<s>` tag should still be used when applicable.
 
-<br><br>
+<hr>
 
 ## `<samp>`
 
@@ -268,7 +268,7 @@ When using the `<pre>` tag to create an image with text characters, for example,
 
 **Examples Notes:** The screen reader did not give any indication that the first example was using a `<samp>` tag nor was there any discernible difference between either example, but the `<samp>` tag should still be used when applicable.
 
-<br><br>
+<hr>
 
 ## `<small>`
 
@@ -280,7 +280,7 @@ When using the `<pre>` tag to create an image with text characters, for example,
 
 **Examples Notes:** The screen reader did not give any indication that the first example was using a `<small>` tag nor was there any discernible difference between either example, but the `<small>` tag should still be used when applicable.
 
-<br><br>
+<hr>
 
 ## `<sub>` and `<sup>`
 
@@ -292,13 +292,13 @@ When using the `<pre>` tag to create an image with text characters, for example,
 
 **Examples Notes:** The screen reader did not give any indication that the first example was using a `<sub>` or `<sup>` tag nor was there any discernible difference between either example, but the `<sub>` or `<sup>` tags should still be used when applicable.
 
-<br><br>
+<hr>
 
 ## `textarea>`
 
     <textarea></textarea>
 
-**Screen reader (Firefox - on page load):** "Edit multi-line out of Edit"
+**Screen reader (Firefox - on page load):** "Edit multi-line out of edit"
 
 **Screen reader (Chrome and Edge - on page load):** "Edit multi-line"
 
@@ -313,13 +313,13 @@ When using the `<pre>` tag to create an image with text characters, for example,
       <textarea></textarea>
     </label>
 
-**Screen reader (Firefox - on page load):** "Clickable leave a review, edit multi-line out of Edit."
+**Screen reader (Firefox - on page load):** "Clickable leave a review, edit multi-line out of edit."
 
 **Screen reader (Chrome and Edge - on page load):** "Leave a review, edit multi-line."
 
-**Screen reader (using the `tab` key to navigate the page):** "Leave a review, edit multiline blank. "
+**Screen reader (using the `tab` key to navigate the page):** "Leave a review, edit multiline blank."
 
-<br><br>
+<hr>
 
 ## `<var>`
 
@@ -331,4 +331,3 @@ When using the `<pre>` tag to create an image with text characters, for example,
 
 **Examples Note:** The screen reader did not give any indication that the first example was using a `<var>` tag nor was there any discernible difference between either example, but the `<var>` tag should still be used when applicable.
 
-<br><br>
