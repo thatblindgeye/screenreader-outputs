@@ -12,6 +12,8 @@
 
 **Screen reader:** The screen reader did not have any output for this example.
 
+**Example notes:** The audio automatically began playing when the page loaded.
+
 <hr>
 
     // controls and autoplay
@@ -19,24 +21,28 @@
     
 **Screen reader (Firefox - on page load):** "Play. Loading 100 percent. Position slider midnight slash three-fourteen. Button mute. Volume slider 100."
 
-**Screen reader (Firefox - tabbing through each controls button):** "Play button", "Position slider midnight slash midnight", "Mute button", and "Volume slider 100".
+**Screen reader (Firefox - tabbing through each controls button):** "Play button", "Position slider midnight slash three-fourteen", "Mute button", and "Volume slider 100".
 
 **Screen reader (Chrome and Edge - on page load):** "Play. Midnight slash three-thirteen. Audio time scrubber midnight slash three-thirteen slider elapsed time. Midnight. Button mute. Button show more media controls."
 
 **Screen reader (Chrome and Edge - tabbing through each controls button):** "Play button", "Audio time scrubber midnight slash midnight slider elapsed time. Midnight", "Volume slider one", "Mute button", and "Show more media controls button more options".
 
-**Example notes:** The audio will automatically begin playing when the page loads.
+**Example notes:** The audio automatically began playing when the page loaded.
 
 When changing the timer position, the screen reader announced the new timer position. For Firefox it announced, "zero-fifteen slash three-fourteen," and for Chrome and Edge it announced, "Audio time scrubber zero-fifteen slash three-thirteen slider elapsed time. Zero-fifteen."
 
 When changing the volume, the screen reader announced the new value of the volume. For Firefox, the values ranged from 0 to 100, and in Chrome and Edge the values ranged from 0.0 to 1.0.
+
+When pressing the "Play" button, the screen reader announced "Pause" as the button changed, and vice versa announced "Play" when pressing the "Pause" button.
+
+When pressing the "Mute" button, the screen reader announced "Unmute" as the button changed, and vice versa announced "Mute" when pressing the "Unmute" button.
 
 <hr>
 
     // controls
     <audio src="./assets/sound_sample.wav" controls></audio>
 
-**Screen reader:** This example has the same outputs as above, except the audio doesn't automatically play when the page loads.
+**Screen reader:** This example had the same outputs as the `// controls and autoplay` example, except the audio doesn't automatically play when the page loads.
 
 <hr>
 
@@ -67,6 +73,6 @@ When changing the volume, the screen reader announced the new value of the volum
 
 **Notes:** Be mindful of using audio that auto plays without any warning or audio that has no way to control the volume.
 
-The audio element does not indicate what the sound that will be played is named. Using a `<label>` tag or a `<figure>` and `<figcaption>` tag can aid in offering context for the audio being played. See the [MDN page on the `<audio>` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/audio) for an example using the `<figure>` tag.
+The audio element does not indicate what the sound that will be played is named. Using ARIA attributes or a `<figure>` and `<figcaption>` tag may aid in offering context for the audio being played. See the [MDN page on the `<audio>` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/audio) for an example using the `<figure>` tag.
 
 
