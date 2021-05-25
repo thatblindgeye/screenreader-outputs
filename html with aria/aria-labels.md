@@ -4,7 +4,7 @@ The `aria-label` attribute simply labels an element with the specified string wh
 
 Per [Using the aria-label attribute](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-label_attribute), the `aria-label` attribute should only be used on interactive elements (buttons, checkboxes, etc.), landmark elements (main, nav, etc.), elements with an explicit widget role, and `iframe` or `img` elements.
 
-According to [https://dequeuniversity.com/assets/html/jquery-summit/html5/slides/landmarks.html](https://dequeuniversity.com/assets/html/jquery-summit/html5/slides/landmarks.html), the `<article>` and `<region>` elements are not considered ARIA landmarks and will be unaffected by the `aria-label` attribute.
+According to [HTML 5 and ARIA Landmarks](https://dequeuniversity.com/assets/html/jquery-summit/html5/slides/landmarks.html), the `<article>` and `<region>` elements are not considered ARIA landmarks and will be unaffected by the `aria-label` attribute.
 
 <br>
 
