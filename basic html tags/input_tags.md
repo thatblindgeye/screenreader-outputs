@@ -30,6 +30,7 @@
 <hr>
 
 **Notes:** When clicking the checkbox with the `space` or `Enter` key, the screen reader announced the new status of the checkbox, e.g. "Checked" or "Not checked".
+
 <br><br>
 
 ## `color`
@@ -315,6 +316,8 @@ The month input is not available in Firefox, and will default to a normal `text`
 
 <br><br>
 
+## `reset`
+
     <input type="reset" value="">
 
 **Screen reader:** "Button."
@@ -326,6 +329,8 @@ The month input is not available in Firefox, and will default to a normal `text`
 **Screen reader:** "Button reset form."
 
 <br><br>
+
+## `search`
 
     <label for="search-field">Search:</label>
     <input type="search" name="search" id="search-field">
@@ -352,6 +357,8 @@ The month input is not available in Firefox, and will default to a normal `text`
 
 <br><br>
 
+## `submit`
+
     <input type="submit" value="">
 
 **Screen reader:** "Button."
@@ -363,6 +370,8 @@ The month input is not available in Firefox, and will default to a normal `text`
 **Screen reader:** "Button submit form."
 
 <br><br>
+
+## `tel`
 
     <label for="phone-number">Phone:</label>
     <input type="tel" name="telephone" id="phone-number">
@@ -388,6 +397,8 @@ The month input is not available in Firefox, and will default to a normal `text`
 **Screen reader (Chrome and Edge - using the `tab` key to navigate the page):** "Edit blank."
 
 <br><br>
+
+## `text`
 
     <input type="text">
 
@@ -467,6 +478,8 @@ The month input is not available in Firefox, and will default to a normal `text`
 
 <br><br>
 
+## `time`
+
     <label for="selected-time">Time:</label>
     <input type="time" name="time" id="selected-time">
 
@@ -492,6 +505,8 @@ The month input is not available in Firefox, and will default to a normal `text`
 
 <br><br>
 
+## `url`
+
     <label for="entered-url">Enter a url:</label>
     <input type="url" name="url" id="entered-url">
 
@@ -516,6 +531,8 @@ The month input is not available in Firefox, and will default to a normal `text`
 **Screen reader (Chrome and Edge - using the `tab` key to navigate the page):** "Edit blank."
 
 <br><br>
+
+## `week`
 
     <label for="selected-week">Select a week:</label>
     <input type="week" name="week" id="selected-week">
