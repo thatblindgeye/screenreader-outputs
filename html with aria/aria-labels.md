@@ -24,7 +24,7 @@ According to [https://dequeuniversity.com/assets/html/jquery-summit/html5/slides
 
     <main aria-label="Label for the main container">This is a main container.</main>
 
-**Screen reader:** "Label for the main container main landmark this is a main container."
+**Screen reader:** "Label for the main container, main landmark, this is a main container."
 
 <br>
 
@@ -53,6 +53,31 @@ According to [https://dequeuniversity.com/assets/html/jquery-summit/html5/slides
 
 **Screen reader (Chrome and Edge - using the `tab` key to navigate the page and give inputs focus):** "Enter a name edit blank."
 
+<br>
+
+    <ul aria-label="shopping list">
+        <li>Butter</li>
+        <li>Milk</li>
+        <li>Eggs</li>
+    </ul>
+    
+**Screen reader:** "Shopping list, list with three items, bullet butter, bullet milk, bullet eggs."
+
+**Examples notes:** The text "list" was repeated because the screen reader read first the `aria-label`, followed by a description of the `<ul>` elements.
+
+<br>
+
+    <nav aria-label="main navigation">
+        <ul >
+            <li>Home</li>
+            <li>About</li>
+            <li>Contact</li>
+        </ul>
+    </nav>
+    
+**Screen reader:** "Main navigation, navigation landmark, list with three items, bullet home, bullet about, bullet contact."
+
+**Examples notes:** The text "navigation" was repeated because the screen reader read first the `aria-label`, followed by stating the type of landmark.
 
 <br><br>
 
