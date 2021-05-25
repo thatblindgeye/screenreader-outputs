@@ -67,7 +67,7 @@ When pressing the "Mute" button, the screen reader announced "Unmute" as the but
     
 **Screen reader (Chrome and Edge - on page load):** "Grouping unavailable button unavailable play. Midnight slash midnight. Audio time scrubber midnight slash midnight slider unavailable elapsed time. Midnight. Button unavailable mute."
 
-**Screen reader (Chrome and Edge - using the `tab` key to navigate the page):** "Unable to play media. Grouping play button unavailable. Midnight slash midnight elapsed time. Midnight audio time scrubber midnight slash midnight slider unavailable. Mute."
+**Screen reader (Chrome and Edge - using the `tab` key to navigate the page and give the media controls focus):** "Unable to play media. Grouping play button unavailable. Midnight slash midnight elapsed time. Midnight audio time scrubber midnight slash midnight slider unavailable. Mute."
 
 <hr>
 
