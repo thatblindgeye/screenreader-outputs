@@ -6,7 +6,7 @@ Per [Using the aria-label attribute](https://developer.mozilla.org/en-US/docs/We
 
 According to [https://dequeuniversity.com/assets/html/jquery-summit/html5/slides/landmarks.html](https://dequeuniversity.com/assets/html/jquery-summit/html5/slides/landmarks.html), the `<article>` and `<region>` elements are not considered ARIA landmarks and will be unaffected by the `aria-label` attribute.
 
-<br><br>
+<br>
 
     <div>This is a div container.</div>
     
@@ -60,7 +60,9 @@ According to [https://dequeuniversity.com/assets/html/jquery-summit/html5/slides
 
 The `aria-labelledby` attribute is similar to the `aria-label` attribute, except it requires creating a relationship between elements by using ID's. Think of `aria-labelledby` as though it were the `<label>` tag linking itself with a form input with the `for` attribute.
 
-This attribute should be used to convey essential information to the user. It also overrides all other labels for an element, including `aria-label` and the native `<label>` tag.
+This attribute should be used to convey essential information to the user. It also overrides all other labels for an element, including `aria-label` and the native `<label>` tag (the `<label>` tag is only overridden when tabbing to give the input focus, otherwise the native `<label>` gets announced normally).
+
+<br>
     
     <div id="myBillingId">Billing</div>
     <div>
@@ -106,12 +108,25 @@ This attribute should be used to convey essential information to the user. It al
 
 **Example notes:** This example was taken from the W3 page on [Using aria-labelledby to provide a name for user interface controls](https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA16).
 
+<br>
+
+    <span id="button-label" aria-hidden="true">Labelled by label</span>
+    <button type="button" aria-labelledby="button-label">Native label</button>
+    
+**Screen reader:** "Button labelled by label."
+
 <br><br>
 
 ## `aria-describedby`
 
-The `aria-describedby` attribute works similarly to the `aria-labelledby` attribute by creating a relationship between elements using ID's. Unlike `aria-labelledby`, hwoever, `aria-describedby` conveys additional information that might help a user.
+The `aria-describedby` attribute works similarly to the `aria-labelledby` attribute by creating a relationship between elements using ID's. Unlike `aria-labelledby`, hwoever, `aria-describedby` conveys additional information that might be useful to a user.
 
+<br>
+    
+    <label>
+        Password:
+        <input type="password" aria-describedby="password-reqs" />
+    </label>
     <span id="password-reqs">Your password must contain:
       <ul>
         <li>At least one capital letter</li>
@@ -120,13 +135,13 @@ The `aria-describedby` attribute works similarly to the `aria-labelledby` attrib
       </ul>
     </span>
 
-**Screen reader (Firefox - on page load):** "Clickable password. Edit has auto-complete your password must contain, list with three items bullet, at least one capital letter, bullet at least one number, bullet at least one special character."
+**Screen reader (Firefox - on page load):** "Clickable password. Edit protected your password must contain, list with three items bullet, at least one capital letter, bullet at least one number, bullet at least one special character."
 
-**Screen reader (Firefox - using the `tab` key to navigate the page and give inputs focus):** "Password. Edit has auto-complete your password must contain, bullet at least one capital letter, bullet at least one number, bullet at least one special character, blank."
+**Screen reader (Firefox - using the `tab` key to navigate the page and give inputs focus):** "Password. Edit protected your password must contain, bullet at least one capital letter, bullet at least one number, bullet at least one special character, blank."
 
-**Screen reader (Chrome and Edge - on page load):** "Password. Edit your password must contain, list with three items bullet, at least one capital letter, bullet at least one number, bullet at least one special character."
+**Screen reader (Chrome and Edge - on page load):** "Password. Edit protected your password must contain, list with three items bullet, at least one capital letter, bullet at least one number, bullet at least one special character."
 
-**Screen reader (Chrome and Edge - using the `tab` key to navigate the page and give inputs focus):** "Password. Edit your password must contain, at least one capital letter, at least one number, at least one special character, blank."
+**Screen reader (Chrome and Edge - using the `tab` key to navigate the page and give inputs focus):** "Password. Edit protected your password must contain, at least one capital letter, at least one number, at least one special character, blank."
 
 <br><br>
 
