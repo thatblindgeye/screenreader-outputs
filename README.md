@@ -29,4 +29,6 @@ ARIA Landmarks are the `<aside>`, `<footer>`, `<form>`, `<header>`, `<main>`, `<
 
 Screen readers may also have other keyboard shortcuts for navigating through a page. For example, with the NVDA screen reader, pressing the `k` key will navigate the user to the next link on the page (this is a reason why giving links meaningful names is important; navigating through a page's links and hearing "link click here" is not helpful to users of assistive technologies).
 
+When the screen reader announces an element, it may also announce what kind of element it is. For example, an `<a>` tag may be announced with "link" in addition to the text contents of the tag, and a `<button>` tag may be announced similarly (except with "button" being announced).
+
 If you have suggestions for an example you think should be included in this repo, feel free to submit a pull request with a `.md` file that includes a code example. If you have run it through NVDA or another screen reader yourself, feel free to include any necessary information (the screen reader and/or browsers used, what the output was when the page loaded or when manually navigating the page, any notes for the example, etc.). Otherwise I can run it through NVDA and add the outputs.
