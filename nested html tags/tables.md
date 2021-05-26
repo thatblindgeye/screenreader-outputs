@@ -4,6 +4,8 @@ Screen reader users may be able to navigate tables with keyboard shortcuts speci
 
 The use (or lack of use) of the `<colgroup>` tag did not seem to affect what the NVDA screen reader announced. It seems that using the tag may be more helpful for visual styling, so it has been omitted from these examples. See [MDN's page on the `<colgroup>` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/colgroup) to see and edit their example (try moving the `class="batman"` attribute from the `<colgroup>` tag and placing it on one of the `<th>` or `<td>` tags).
 
+W3.org has a great page regarding [table concepts](https://www.w3.org/WAI/tutorials/tables/), which goes into how to properly make an accessible table using various table formats.
+
 ## A Bad Table
 
     <table>
@@ -121,4 +123,48 @@ When manually navigating to a different column, the screen reader announced the 
 
 When manually navigating to a different column, the screen reader announced either the column number followed by the contents of the new cell (e.g. "column one pants"), or the column header name and column number followed by the contents of the new cell (e.g. "twenty-twenty column two fifty").
 
+<hr>
 
+## Table with Irregular Headers
+
+    <table>
+        <thead>
+            <tr>
+                <td rowspan="2"></td>
+                <th colspan="2" scope="colgroup">Mars</th>
+                <th colspan="2" scope="colgroup">Venus</th>
+              </tr>
+              <tr>
+                <th scope="col">Produced</th>
+                <th scope="col">Sold</th>
+                <th scope="col">Produced</th>
+                <th scope="col">Sold</th>
+              </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">Teddy Bears</th>
+                <td>50,000</td>
+                <td>30,000</td>
+                <td>100,000</td>
+                <td>80,000</td>
+              </tr>
+              <tr>
+                <th scope="row">Board Games</th>
+                <td>10,000</td>
+                <td>5,000</td>
+                <td>12,000</td>
+                <td>9,000</td>
+              </tr>
+        </tbody>
+    </table>
+
+**Screen reader (Firefox - on page load):** "Table with four rows and five columns. Row one through two, column one row one, column two through three Mars. Column four through five Venus. Row two Mars column two produced, Mars column three sold. Venus column four produced, Venus column five sold. Row three column one teddy bears. Produced Mars column two fifty-thousand, sold Mars column three thirty-thousand. Produced Venus column four one-hundred-thousand, sold Venus column five eighty-thousand. Row four column one board games. Produced Mars column two ten-thousand, sold Mars column three five-thousand. Produced Venus column four twelve-thousand, sold Venus column five nine-thousand. Out of table."
+
+**Screen reader (Chrome and Edge - on page load):** "Table with four rows and five columns. Row one through two, column one row one, Mars produced column two through three Mars. Venus produced column four through five Venus. Row two Mars produced column one produced, Mars sold column two sold. Venus produced column three produced, Venus sold column four sold. Teddy bears row three column one teddy bears. Mars produced column two fifty-thousand, Mars sold column three thirty-thousand. Venus produced column four one-hundred-thousand, Venus sold column five eighty-thousand. Board games row four column one board games. Mars produced column two ten-thousand, Mars sold column three five-thousand. Venus produced column four twelve-thousand, Venus sold column five nine-thousand. Out of table."
+
+**Example notes:** This example was taken from [Tables with irregular headers](https://www.w3.org/WAI/tutorials/tables/irregular/) on W3.org.
+
+When manually navigating to a different row, the screen reader announced either the row number followed by the contents of the new cell (e.g. "row three teddy bears" or "row two produced") or the row header name and row number followed by the contents of the new cell (e.g. "teddy bears row three fifty-thousand").
+
+When manually navigating to a different column, the screen reader announced either the column number followed by the contents of the new cell (e.g. "column one board games"), or the column subhead and header followed by the column number followed by the contents of the new cell (e.g. "produced mars column two ten-thousand").
