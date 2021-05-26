@@ -20,7 +20,7 @@
     
 **Screen reader:** "This is a sentence with emphasized text."
 
-**Examples Notes:** There is no discernible emphasis in any of the above examples, but the appropriate tag should still be used when applicable.
+**Example Notes:** There was no discernible emphasis in any of the above examples, but the appropriate tag should still be used when applicable (see [`<b>`: The Bring Attention To element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/b), [`<strong>`: The Strong Importance element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/strong), [`<em>`: The Emphasis element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/em), [`<u>`: The Unarticulated Annotation (Underline) element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/u), and [`<i>`: The Idiomatic Text element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/i) for more information).
 
 <br>
 
@@ -46,7 +46,7 @@
 
 **Screen reader:** "John Smith, one two three Fake Street, Fakesville Ohio, one two three four five."
 
-**Examples Note:** The screen reader did not give any indication that the first example was using an `<address>` tag nor was there any discernible difference between either example, but the `<address>` tag should still be used when applicable.
+**Example Note:** The screen reader did not give any indication that the first example was using an `<address>` tag nor was there any discernible difference between either example, but the `<address>` tag should still be used when applicable (see [`<address>`: The Contact Address element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/address) for more information).
 
 <hr>
 
@@ -57,8 +57,6 @@
     </blockquote>
 
 **Screen reader:** "blockquote W3C's primary activity is to develop protocols and guidelines that ensure long-term growth for the Web. W3C's standards define key parts of what makes the World Wide Web work. Learn more about W3C's mission out of blockquote".
-
-**Example Notes:** the "blockquote" and "out of blockquote" text was only announced when the screen reader was reading the contents of the page, or when navigating the page using the `up arrow` and `down arrow` keys.
 
 <br>
 
@@ -78,7 +76,7 @@
 
 **Screen reader:** "The Starry Night by Vincent Van Gogh"
 
-**Examples Notes:** The screen reader did not give any indication that the first example was using a `<cite>` tag nor was there any discernible difference between either example, but the `<cite>` tag should still be used when applicable.
+**Example Notes:** The screen reader did not give any indication that the first example was using a `<cite>` tag nor was there any discernible difference between either example, but the `<cite>` tag should still be used when applicable (see [`<cite>`: The Citation element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/cite) for more information).
 
 <hr>
 
@@ -90,7 +88,7 @@
 
 **Screen reader:** "The code HTML tag should be used to define text as computer code."
 
-**Examples Notes:** The screen reader did not give any indication of which part of the text was inside the `<code>` tag, but the tag should still be used when applicable.
+**Examples Notes:** The screen reader did not give any indication that the first example was using a `<code>` tag nor was there any discernible difference between either example, but the `<code>` tag should still be used when applicable (see [`<code>`: The Inline Code element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/code) for more information).
 
 <hr>
 
@@ -102,7 +100,7 @@
 
 **Screen reader:** "HP laptop."
 
-**Examples Notes:** The screen reader did not give any indication that the first example was using a `<data>` tag nor was there any discernible difference between either example, but the `<data>` tag should still be used when applicable.
+**Example Notes:** The screen reader did not give any indication that the first example was using a `<data>` tag nor was there any discernible difference between either example, but the `<data>` tag should still be used when applicable (see [MDN's page on the `<data>` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/data) for more information).
 
 <hr>
 
@@ -126,9 +124,9 @@
 
     <dialog open tabindex='0'>Thank you for checking out this repo!</dialog>
 
-**Screen reader (using the `tab` key to navigate the page):** "Dialog thank you for checking out this repo."
+**Screen reader (using the `tab` key to navigate the page and give the dialog focus):** "Dialog thank you for checking out this repo."
 
-**Example Notes:** Check the browser/screen reader support for the `<dialog>` tag before using it.
+**Example Notes:** Check the browser/screen reader support at [`<dialog>`: The Dialog element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog) before using this tag.
 
 <hr>
 
@@ -164,37 +162,37 @@
 
     <img src="//unsplash.it/500" alt="A random image from Unsplash">
 
-**Screen reader:** "Graphic a random image from Unsplash."
+**Screen reader:** "A random image from Unsplash, graphic."
 
 <br>
 
     <img src="//unsplash.it/500" alt="">
 
-**Example Notes:** The screen reader did not announce the presence of the image when navigating the page with the `up arrow` and `down arrow` keys, or when the page first loaded and the screen reader announced the contents of the page.
+**Example Notes:** The screen reader did not announce the presence of the image.
 
 <br>
 
     <img src="//unsplash.it/500">
     
-**Screen reader (Chrome - on page load):** "Unlabeled graphic. To get missing image descriptions, open the context menu."
+**Screen reader (Chrome):** "To get missing image descriptions open the context menu, unlabeled graphic."
 
 <br>
 
     <img src="//unsplash.it/500" alt="" tabindex="0">
 
-**Screen reader (using the `tab` key to navigate the page):** "Blank."
+**Screen reader (using the `tab` key to navigate the page and give the image focus):** "Blank."
 
 <br>
 
     <img src="//unsplash.it/500" tabindex="0">
 
-**Screen reader (Firefox and Edge - using the `tab` key to navigate the page):** "600 graphic."
+**Screen reader (Firefox and Edge):** "500, graphic."
 
-**Screen reader (Chrome - using the `tab` key to navigate the page):** "600 Unlabelled graphic."
+**Screen reader (Chrome):** "500, unlabeled graphic."
 
 <br>
 
-**Notes:** When using images as decoration, the `alt` attribute should be used with an empty string rather than omitted. If simply omitted, some screen readers or browsers may announce the image in some way when it shouldn't/doesn't need to. Checkout the W3 [Decorative Images](https://www.w3.org/WAI/tutorials/images/decorative/) page for further information.
+**Notes:** When using images as decoration, the `alt` attribute should be used with an empty string rather than omitted. If simply omitted, some screen readers or browsers may announce the image in some way when it shouldn't/doesn't need to (see [Decorative Images](https://www.w3.org/WAI/tutorials/images/decorative/) for more information).
 
 <hr>
 
@@ -206,7 +204,7 @@
 
 **Screen reader:** "My keyboard is broken, so I have to copy and paste the t key"
 
-**Example Notes:** The screen reader did not give any indication that the first example was using a `<kbd>` tag nor was there any discernible difference between either example, but the `<kbd>` tag should still be used when applicable.
+**Example Notes:** The screen reader did not give any indication that the first example was using a `<kbd>` tag nor was there any discernible difference between either example, but the `<kbd>` tag should still be used when applicable (see [`<kbd>`: The Keyboard Input element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/kbd) for more information).
 
 <hr>
 
@@ -226,9 +224,9 @@
 
 **Screen reader:** "An example of what preformatted text can look like."
 
-**Examples Notes:** The screen reader did not give any indication that the first example was using a `<pre>` tag nor was there any discernible difference between either example, but the `<pre>` tag should still be used when applicable.
+**Example Notes:** The screen reader did not give any indication that the first example was using a `<pre>` tag nor was there any discernible difference between either example, but the `<pre>` tag should still be used when applicable (see [`<pre>`: The Preformatted Text element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/pre) for more information).
 
-When using the `<pre>` tag to create an image with text characters, for example, you should provide an alternative caption for screen readers. Check out the [MDN page on the pre tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/pre#accessibility_concerns) for an example.
+When using the `<pre>` tag to create an image with text characters, for example, you should provide an alternative caption for screen readers. See the link for the `pre` tag above for an example.
 
 <hr>
 
@@ -240,7 +238,7 @@ When using the `<pre>` tag to create an image with text characters, for example,
 
 **Screen reader:** "This is a quoted section of text said the paragraph tag."
 
-**Examples Notes:** The screen reader did not give any indication that the first example was using a `<q>` tag nor was there any discernible difference between either example, but the `<q>` tag should still be used when applicable.
+**Example Notes:** The screen reader did not give any indication that the first example was using a `<q>` tag nor was there any discernible difference between either example, but the `<q>` tag should still be used when applicable (see [`<q>`: The Inline Quotation element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/q) for more information).
 
 <hr>
 
@@ -254,7 +252,7 @@ When using the `<pre>` tag to create an image with text characters, for example,
 
 **Screen reader:** "There are ten spots left. Only two spots left."
 
-**Examples Notes:** The screen reader did not give any indication that the first example was using an `<s>` tag nor was there any discernible difference between either example, but the `<s>` tag should still be used when applicable.
+**Example Notes:** The screen reader did not give any indication that the first example was using an `<s>` tag nor was there any discernible difference between either example, but the `<s>` tag should still be used when applicable (see [MDN's page on the `<s>` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/s) for more information).
 
 <hr>
 
@@ -266,7 +264,7 @@ When using the `<pre>` tag to create an image with text characters, for example,
 
 **Screen reader:** "An error message from a program."
 
-**Examples Notes:** The screen reader did not give any indication that the first example was using a `<samp>` tag nor was there any discernible difference between either example, but the `<samp>` tag should still be used when applicable.
+**Example Notes:** The screen reader did not give any indication that the first example was using a `<samp>` tag nor was there any discernible difference between either example, but the `<samp>` tag should still be used when applicable (see [`<samp>`: The Sample Output element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/samp) for more information).
 
 <hr>
 
@@ -278,7 +276,7 @@ When using the `<pre>` tag to create an image with text characters, for example,
 
 **Screen reader:** "Copyright twenty twenty-one Nobody Incorporated."
 
-**Examples Notes:** The screen reader did not give any indication that the first example was using a `<small>` tag nor was there any discernible difference between either example, but the `<small>` tag should still be used when applicable.
+**Example Notes:** The screen reader did not give any indication that the first example was using a `<small>` tag nor was there any discernible difference between either example, but the `<small>` tag should still be used when applicable (see [`<small>`: the side comment element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/small) for more information).
 
 <hr>
 
@@ -290,7 +288,7 @@ When using the `<pre>` tag to create an image with text characters, for example,
 
 **Screen reader:** "This is an example of subscript text and superscript text."
 
-**Examples Notes:** The screen reader did not give any indication that the first example was using a `<sub>` or `<sup>` tag nor was there any discernible difference between either example, but the `<sub>` or `<sup>` tags should still be used when applicable.
+**Example Notes:** The screen reader did not give any indication that the first example was using a `<sub>` or `<sup>` tag nor was there any discernible difference between either example, but the `<sub>` or `<sup>` tags should still be used when applicable (see [`<sub>`: The Subscript element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/sub) and [`<sup>`: The Superscript element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/sup) for more information).
 
 <hr>
 
@@ -303,8 +301,6 @@ When using the `<pre>` tag to create an image with text characters, for example,
 **Screen reader (Chrome and Edge - on page load):** "Edit multi-line"
 
 **Screen reader (using the `tab` key to navigate the page):** "Edit multi-line blank"
-
-**Example Notes:** If the text area has text entered into it when navigating to it with the `tab` key, the screen reader may announce the content of the text-area rather than "blank".
 
 <br>
 
@@ -319,6 +315,10 @@ When using the `<pre>` tag to create an image with text characters, for example,
 
 **Screen reader (using the `tab` key to navigate the page):** "Leave a review, edit multiline blank."
 
+<br>
+
+**Notes:** If the text area has text entered into it when navigating to it with the `tab` key, the screen reader may announce the content of the text-area rather than "blank".
+
 <hr>
 
 ## `<var>`
@@ -329,5 +329,5 @@ When using the `<pre>` tag to create an image with text characters, for example,
 
 **Screen reader:** "I declared number as a variable."
 
-**Examples Note:** The screen reader did not give any indication that the first example was using a `<var>` tag nor was there any discernible difference between either example, but the `<var>` tag should still be used when applicable.
+**Example Note:** The screen reader did not give any indication that the first example was using a `<var>` tag nor was there any discernible difference between either example, but the `<var>` tag should still be used when applicable (see [`<var>`: The Variable element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/var) for more information).
 
