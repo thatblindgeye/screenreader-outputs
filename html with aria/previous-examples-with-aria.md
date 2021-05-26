@@ -1,5 +1,7 @@
 # Previous Examples with ARIA
 
+This section revisits various examples from other sections in this repo, adding ARIA attributes to show how the previous examples can be made more accessible or to simply change what a screen reader announces.
+
 <br><br>
 
 ## Buttons with icons
@@ -21,7 +23,7 @@
     
 **Screen reader:** "Button add new."
 
-<br><br>
+<hr>
 
 ## `audio` and `video`
 
@@ -53,7 +55,7 @@
 
 **Screen reader (Chrome and Edge - using the `tab` key to navigate the page and give the media controls focus):** "Video sample grouping play button midnight slash zero twenty-two mute button enter full screen button show more media controls button more options elapsed time, midnight video time scrubber midnight slash zero twenty-two slider."
 
-<hr>
+<br>
 
 **Notes:** In a [previous example of the `video` tag](https://github.com/thatblindgeye/screenreader-outputs/blob/main/basic%20html%20tags/video_tags.md) and a [previous example of the `audio` tag](https://github.com/thatblindgeye/screenreader-outputs/blob/main/basic%20html%20tags/audio_tags.md), the screen reader did not give any indication of what the media being played was. Using the `aria-labelledby` attribute may aid in context to the media that is tied to the media player.
 
@@ -63,7 +65,7 @@ Wrapping the media tag inside of a `label` tag did not provide exactly the same 
 
 Slightly less related to screen reader accessibility, but the MDN page on [Accessible multimedia](https://developer.mozilla.org/en-US/docs/Learn/Accessibility/Multimedia) shows how you can create a custom media player as well as how to implement audio transcripts and video text tracks (another great way to offer accessibility).
 
-<br><br>
+<hr>
 
 ## Multi-Input Form
 
@@ -100,3 +102,45 @@ Slightly less related to screen reader accessibility, but the MDN page on [Acces
 **Screen reader (Edge and Chrome - using the `tab` or arrow keys to navigate the page and give inputs focus):** "A sample form form. First section grouping. First section name, edit blank.", "First section city, edit blank.", "Second section grouping. Second section would you like to check this checkbox. Checkbox not checked.", "Second section select your favorite color, red, radio button not checked one of three.", "Second section select your favorite color, blue, radio button not checked two of three.", and "Second section select your favorite color, other, radio button not checked three of three.".
 
 **Example notes:** You may not need so many `aria-labelledby` labels for form inputs as the radio inputs have, but this example was meant to show what can be done with ARIA labels.
+
+<hr>
+
+## `<svg>`
+
+        <svg width="100" height="100" role="img">
+            <title>I'm a circle.</title>
+            <desc>A red circle.</desc>
+            <circle cx="50" cy="50" r="40" fill="red" />
+        </svg>
+
+**Screen reader (on page load):** "Graphic, I'm a circle."
+
+**Screen reader (Firefox - using the shortcut key for graphics ):** "I'm a circle, graphic, a red circle."
+
+**Screen reader (Chrome and Edge - using the shortcut key for graphics ):** "I'm a circle, graphic."
+
+<br>
+
+        <svg width="100" height="100" aria-labelledby="svg-title svg-desc">
+            <title id="svg-title">I'm another circle.</title>
+            <desc id="svg-desc">Another red circle.</desc>
+            <circle cx="50" cy="50" r="40" fill="red" />
+        </svg>
+
+**Screen reader (Chrome and Edge - on page load or using the shortcut key for graphics):** "Graphic, I'm another circle, another red circle."
+
+**Notes:** "The screen reader did not announce the presence of the `<svg>` in Firefox."
+
+<br>
+
+        <svg width="100" height="100" role="img" aria-labelledby="svg-title2 svg-desc2">
+            <title id="svg-title2">I'm yet another circle.</title>
+            <desc id="svg-desc2">Yet another red circle.</desc>
+            <circle cx="50" cy="50" r="40" fill="red" />
+        </svg>
+
+**Screen reader (on page load):** "Graphic, I'm yet another circle, yet another red circle."
+
+**Screen reader (Firefox - using the shortcut key for graphics ):** "I'm yet another circle, yet another red circle, graphic, yet another red circle."
+
+**Screen reader (Chrome and Edge - using the shortcut key for graphics ):** "I'm yet another circle, yet another red circle, graphic."
