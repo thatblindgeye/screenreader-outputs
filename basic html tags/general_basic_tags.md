@@ -68,26 +68,6 @@
 
 <hr>
 
-## `<canvas>`
-
-    <canvas width="300" height="300">
-        An alternative text describing what your canvas displays.
-    </canvas>
-    
-**Screen reader (on page load):** "An alternative text describing what your canvas displays."
-
-<br>
-
-    <canvas width="300" height="300" tabindex="0">
-        An alternative text describing what your canvas displays.
-    </canvas>
-
-**Screen reader (using the `tab` key to navigate the page and give the canvas focus):** "An alternative text describing what your canvas displays."
-
-**Notes:** Per MDN, there are [accessibility concerns with the `<canvas>` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/canvas#accessibility_concerns).
-
-<hr>
-
 ## `<cite>`
 
     <p><cite>The Starry Night</cite> by Vincent van Gogh</p>
@@ -132,6 +112,21 @@
 
 <hr>
 
+## `<details>` and `<summary>`
+
+    <details>
+        <summary>Avatar: The Last Airbender</summary>
+        <p>Avatar: The Last Airbender is an American animated television series produced by Nickelodeon Animation Studios.</p>
+    </details>
+    
+**Screen reader:** "Button collapsed, Avatar The Last Airbender."
+
+**Notes:** When pressing the `space` or `Enter` keys when the `<summary>` element has focus, the screen reader announced the new state of the element, e.g. "collapsed" or "expanded".
+
+When the `<summary>` element is expanded, the screen reader announced the text within the `<details>` element normally, e.g. "Avatar: The Last Airbender is an American animated television series produced by Nickelodeon Animation Studios."
+
+<hr>
+
 ## `<dialog>`
 
     <dialog open>Thank you for checking out this repo!</dialog>
@@ -147,6 +142,19 @@
 **Screen reader (using the `tab` key to navigate the page and give the dialog focus):** "Dialog thank you for checking out this repo."
 
 **Example Notes:** Check the browser/screen reader support at [`<dialog>`: The Dialog element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog) before using this tag.
+
+<hr>
+
+## `<figure>` and `<figcaption>`
+
+    <figure>
+        <img src="//unsplash.it/250" alt="Unsplash sample">
+        <figcaption>Fig.1 - A random Unsplash picture.</figcaption>
+    </figure>
+    
+**Screen reader (on page load):** "Figure, graphic, Unsplash sample." and "Caption, fig dot one a random Unsplash picture."
+
+**Notes:** When using the `up arrow` or `down arrow` keys to navigate the page, the `<figure>` and `<figcaption>` elements were announced separately, but with the same outputs as above.
 
 <hr>
 
@@ -175,44 +183,6 @@
 **Screen reader:** "Web Accessibility Initiative frame..."
 
 **Example Notes:** The title attribute should be included to give screen readers context of the embedded content.
-
-<hr>
-
-## `<img>`
-
-    <img src="//unsplash.it/500" alt="A random image from Unsplash">
-
-**Screen reader:** "A random image from Unsplash, graphic."
-
-<br>
-
-    <img src="//unsplash.it/500" alt="">
-
-**Example Notes:** The screen reader did not announce the presence of the image.
-
-<br>
-
-    <img src="//unsplash.it/500">
-    
-**Screen reader (Chrome):** "To get missing image descriptions open the context menu, unlabeled graphic."
-
-<br>
-
-    <img src="//unsplash.it/500" alt="" tabindex="0">
-
-**Screen reader (using the `tab` key to navigate the page and give the image focus):** "Blank."
-
-<br>
-
-    <img src="//unsplash.it/500" tabindex="0">
-
-**Screen reader (Firefox and Edge):** "500, graphic."
-
-**Screen reader (Chrome):** "500, unlabeled graphic."
-
-<br>
-
-**Notes:** When using images as decoration, the `alt` attribute should be used with an empty string rather than omitted. If simply omitted, some screen readers or browsers may announce the image in some way when it shouldn't/doesn't need to (see [Decorative Images](https://www.w3.org/WAI/tutorials/images/decorative/) for more information).
 
 <hr>
 
@@ -309,53 +279,6 @@ When using the `<pre>` tag to create an image with text characters, for example,
 **Screen reader:** "This is an example of subscript text and superscript text."
 
 **Example Notes:** The screen reader did not give any indication that the first example was using a `<sub>` or `<sup>` tag nor was there any discernible difference between either example, but the `<sub>` or `<sup>` tags should still be used when applicable (see [`<sub>`: The Subscript element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/sub) and [`<sup>`: The Superscript element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/sup) for more information).
-
-<hr>
-
-## `<svg>`
-
-    <svg width="100" height="100">
-        <circle cx="50" cy="50" r="40" fill="red" />
-    </svg>
-
-**Example Notes:** The screen reader did not announce the presence of the `<svg>` element.
-
-<br>
-
-    <svg width="100" height="100" tabindex="-1">
-        <circle cx="50" cy="50" r="40" fill="red" />
-    </svg>
-
-**Screen reader (Chrome and Edge - on page load or using the shortcut key for graphics):** "Graphic."
-
-<br>
-
-    <svg width="100" height="100" tabindex="-1">
-        I'm a circle
-        <circle cx="50" cy="50" r="40" fill="red" />
-    </svg>
-
-**Screen reader (Chrome and Edge - on page load or using the shortcut key for graphics):** "Graphic."
-
-<br>
-
-    <svg width="100" height="100" tabindex="-1">
-        <title>I'm a circle.</title>
-        <desc>A red circle.</desc>
-        <circle cx="50" cy="50" r="40" fill="red" />
-    </svg>
-
-**Screen reader (Firefox - on mouse hover):** "I'm a circle. A red circle."
-
-**Screen reader (Chrome and Edge - on page load):** "Graphic, I'm a circle."
-
-**Screen reader (Chrome and Edge - using the shortcut key for graphics):** "I'm a circle, graphic."
-
-**Notes:** If an `<svg>` is only decorative,it may be best to follow the rules for `<img>` tags (see [Decorative Images](https://www.w3.org/WAI/tutorials/images/decorative/) for more information).
-
-The screen reader did not seem to recognize an `<svg>` element in Firefox except when hovering over it with the mouse. A possible fix is with ARIA attributes.
-
-The text content of the `<title>` and `<desc>` tags were not rendered on the page, but the text contents of the `<title>` tag did appear as a tool tip when hovering over the `<svg>`.
 
 <hr>
 
