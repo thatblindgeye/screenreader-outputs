@@ -4,27 +4,6 @@ This section revisits various examples from other sections in this repo, adding 
 
 <br><br>
 
-## Buttons with icons
-
-    <button type="button">
-        <span class="material-icons" aria-hidden="true">add</span>
-        Add to List
-    </button>
-    
-**Screen reader:** "Button add to list."
-
-**Examples notes:** In a [previous example of buttons with icons](https://github.com/thatblindgeye/screenreader-outputs/blob/main/nested%20html%20tags/buttons-with-icons.md), the screen reader announced duplicate text due to the text content of the `span` tag and the text content of the `button` tag. Using the `aria-hidden` attribute, the text content of the `span` tag should be hidden from the accessibility tree, but allow the icon to visually remain.
-
-<br>
-
-    <button type="button" aria-label="Add New">
-        <span class="material-icons">add</span>
-    </button>
-    
-**Screen reader:** "Button add new."
-
-<hr>
-
 ## `audio` and `video`
 
     <audio src="./assets/sound_sample.wav" aria-label="sound sample" controls></audio>
@@ -64,6 +43,63 @@ Adding the `aria-hidden="true"` attribute prevented the screen reader from dupli
 Wrapping the media tag inside of a `label` tag did not provide exactly the same output as above. When using the `tab` key to navigate the page and give the media controls focus, the screen reader did not announce the label text as it did in the example above.
 
 Slightly less related to screen reader accessibility, but the MDN page on [Accessible multimedia](https://developer.mozilla.org/en-US/docs/Learn/Accessibility/Multimedia) shows how you can create a custom media player as well as how to implement audio transcripts and video text tracks (another great way to offer accessibility).
+
+<hr>
+
+## Buttons (disabled)
+
+    <button type="button" aria-disabled="true">ARIA</button>
+
+**Screen reader:** "ARIA, button, unvailable."
+    
+In a [previous example of the `button` tag](https://github.com/thatblindgeye/screenreader-outputs/blob/main/basic%20html%20tags/button_tags.md), when a button had the `disabled` attribute, the screen reader recognized the button when using the dedicated key for navigating between buttons on the page, when using the `up arrow` or `down arrow` keys, and when the page initially loaded, but ignored the button when using the `tab` key to navigate the page. Keep in mind these results are only with the NVDA screen reader; other screen readers may behave differently.
+
+Using the `aria-disabled` attribute still makes the button focusable and recognized by the screen reader when tabbing in addition to the ways a button with the `disabled` attribute is focusable/recognized.
+
+Using an example from the [a11y-101 page on aria-disabled](https://a11y-101.com/development/aria-disabled) (specifically the "Combining aria-disabled and aria-live" section), a case for using `aria-disabled` could be when you have a button that is disabled until a user checks some sort of "agree to terms of service" checkbox. Keep in mind that using `aria-disabled` would require extra JavaScript to properly disable the button.
+
+<hr>
+
+## Buttons with icons
+
+    <button type="button">
+        <span class="material-icons" aria-hidden="true">add</span>
+        Add to List
+    </button>
+    
+**Screen reader:** "Button add to list."
+
+**Examples notes:** In a [previous example of buttons with icons](https://github.com/thatblindgeye/screenreader-outputs/blob/main/nested%20html%20tags/buttons-with-icons.md), the screen reader announced duplicate text due to the text content of the `span` tag and the text content of the `button` tag. Using the `aria-hidden` attribute, the text content of the `span` tag should be hidden from the accessibility tree, but allow the icon to visually remain.
+
+<br>
+
+    <button type="button" aria-label="Add New">
+        <span class="material-icons">add</span>
+    </button>
+    
+**Screen reader:** "Button add new."
+
+<hr>
+
+## Inputs (required)
+
+    <form>
+        <label>
+            Name:
+            <input type="text" aria-required="true" />
+        </label>
+        <input type="submit" />
+    </form>
+    
+**Screen reader (Firefox - using the `tab` key to navigate the page and give the input focus):** "Name, edit required has auto-complete, blank."
+
+**Screen reader (Chrome and Edge - using the `tab` key to navigate the page and give the input focus):** "Name, edit required, blank."
+
+In a [previous example of the `<input>` tag](https://github.com/thatblindgeye/screenreader-outputs/blob/main/basic%20html%20tags/input_tags.md), the screen reader also announced "invalid entry" for text inputs that had the `required` attribute. 
+
+Another difference is when the form is submitted. Using the `required` attribute, when attempting to submit the form with the input blank, the browser may have a default popup appear stating, "please fill out this field" (or something similar), and the form is prevented from being submitted. Using `aria-required`, there is no such pop-up and the form is not prevented from being submitted (this can also be achieved by giving the form tag the `novalidate` attribute when using the native `required` attribute on inputs).
+
+If you are doing your own form validation rather than relying on browser validation then this may not be an issue, and using `aria-required` (or giving a form the `novalidate` attribute) may be beneficial to making your form more uniform across different browsers.
 
 <hr>
 
