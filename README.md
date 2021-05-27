@@ -25,6 +25,15 @@ For more in depth information regarding web accessibility, please visit the [Web
 
 ## Quick notes
 
+One way you may be able to get an idea for what a screen reader may announce for a particular element is by inspecting an element in the dev tools. In Chrome and Edge, simply select the "Accessibility" tab within the Elements pane, and in Firefox simply go into the Accessibility pane. For Chrome and/or Edge, you may need to enable experimental dev tools; checkout [The Art of Labeling](https://youtu.be/8dCUzOiMRy4?t=106) at the 1:46 marker to see how to do so. From there, just select the element you want to inspect (either from the HTML tree in Chrome/Edge or the list in Firefox), and see what the "Name" property is under the "Computed Properties" (Chrome/Edge)/"Properties" (Firefox) section.
+
+In the first screenshot below (from Chrome dev tools), the link is announced as "Google visited link" due to the `alt="Google"` attribute. In the second screenshot below (from Firefox dev tools), the button is announced as "Confirm button" due to it having an `arialabelledby` attribute that references another element whose text contents is "Confirm" (note: if the element being referenced by the `aria-labelledby` attribute had a `display: none` property, the "relations" section would not show the "labelled by" property). This may not always be 100% accurate, but it will definitely get you on the right track for getting a good idea.
+
+![Screenshot from Chrome dev tools](https://user-images.githubusercontent.com/70952936/119906667-a5685600-bf1c-11eb-93ec-8f43a6ac101c.png)
+![Screenshot from Firefox dev tools](https://user-images.githubusercontent.com/70952936/119907360-12c8b680-bf1e-11eb-9a18-7e843feddfd1.png)
+
+<br>
+
 ARIA Landmarks are the `<aside>`, `<footer>`, `<form>`, `<header>`, `<main>`, `<nav>`, and `<section>` HTML elements. Landmarks can help screen reader users navigate through a web page using keyboard shortcuts based on the screen reader being used. The W3 page on [HTML5 Sectioning Elements](https://www.w3.org/TR/2017/NOTE-wai-aria-practices-1.1-20171214/examples/landmarks/HTML5.html) page has information regarding what default ARIA role each HTML element is, as well as buttons to toggle an outline around each landmark or heading on the page.
 
 Screen readers may also have other keyboard shortcuts for navigating through a page. For example, with the NVDA screen reader, pressing the `k` key will navigate the user to the next link on the page (this is a reason why giving links meaningful names is important; navigating through a page's links and hearing "link click here" is not helpful to users of assistive technologies).
