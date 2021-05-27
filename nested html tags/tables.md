@@ -168,3 +168,55 @@ When manually navigating to a different column, the screen reader announced eith
 When manually navigating to a different row, the screen reader announced either the row number followed by the contents of the new cell (e.g. "row three teddy bears" or "row two produced") or the row header name and row number followed by the contents of the new cell (e.g. "teddy bears row three fifty-thousand").
 
 When manually navigating to a different column, the screen reader announced either the column number followed by the contents of the new cell (e.g. "column one board games"), or the column subhead and header followed by the column number followed by the contents of the new cell (e.g. "produced mars column two ten-thousand").
+
+<hr>
+
+## Table with Multi-Level Headers
+    <table>
+        <caption>Room Availability</caption>
+        <thead>
+            <tr>
+                <td></td>
+                <th id="chalet" scope="col">Chalet</th>
+                <th id="villa" scope="col">Villa</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th id="paris" scope="colgroup" colspan="3">Paris</th>
+            </tr>
+            <tr>
+                <th id="parbed1" headers="paris">1 bedroom</th>
+                <td headers="paris parbed1 chalet">25</td>
+                <td headers="paris parbed1 villa">23</td>
+            </tr>
+            <tr>
+                <th id="parbed2" headers="paris">2 bedroom</th>
+                <td headers="paris parbed2 chalet">52</td>
+                <td headers="paris parbed2 villa">32</td>
+            </tr>
+            <tr>
+                <th id="rome" scope="colgroup" colspan="3">Rome</th>
+            </tr>
+            <tr>
+                <th id="romebed1" headers="rome">1 bedroom</th>
+                <td headers="rome romebed1 chalet">23</td>
+                <td headers="rome romebed1 villa">3</td>
+            </tr>
+            <tr>
+                <th id="romebed2" headers="rome">2 bedroom</th>
+                <td headers="rome romebed2 chalet">43</td>
+                <td headers="rome romebed2 villa">30</td>
+            </tr>
+        </tbody>
+    </table>
+
+**Screen reader (Firefox - on page load):** "Table with seven rows and three columns. Caption, room availability. Row one column one, column two chalet, column three villa. Row two column one through three Paris. Row three Paris column one one bedroom, Paris chalet column two twenty-five, Paris villa column three twenty-three. Row four Paris column one two bedroom, Paris chalet column two fifty-two, Paris villa column three thirty-two. Row five Paris column one through three Rome. Row six Rome column one one bedroom, Rome chalet column two twenty-three, Rome villa column three three. Row seven Rome column one two bedroom, Rome chalet column two forty-three, Rome villa column three thirty. Out of table."
+
+**Screen reader (Firefox - on page load):** "Table with seven rows and three columns. Caption, room availability. Row one Paris Rome column one, chalet Paris Rome column two chalet, villa Paris Rome column three villa. Row two Paris Rome column one through three Paris. One bedroom row three Paris Rome column one one bedroom, chalet Paris Rome column two twenty-five, villa Paris Rome column three twenty-three. Two bedroom row four Paris Rome column one two bedroom, chalet Paris Rome column two fifty-two, villa Paris Rome column three thirty-two. Row five Paris Rome column one through three Rome. One bedroom row six Paris Rome column one one bedroom, chalet Paris Rome column two twenty-three, villa Paris Rome column three three. Two bedroom row seven Paris Rome column one two bedroom, chalet Paris Rome column two forty-three, villa Paris Rome column three thirty. Out of table."
+
+**Example notes:** Using a table like this may cause issues with conveying the correct context to a screen reader. In Chrome and Edge, the screen reader announced "Paris Rome" instead of the correct heading. The W3.org page on [Tables with multi-level headers](https://www.w3.org/WAI/tutorials/tables/multi-level/) has this example along with a better alternative (example 3).
+
+When manually navigating to a different row, the screen reader announced either the row number and column number followed by the contents of the new cell (e.g. "row two, column one through three, Paris"); the row number followed by the contents of the new cell (e.g. "row four, two bedroom"); the row number, header name, and column number followed by the contents of the new cell (e.g. "row three, Paris, column one, one bedroom"); or the header name and row number followed by the contents of the new cell (e.g. "two bedroom, row four, fifty-two").
+
+When manually navigating to a different column, the screen reader announced the header name and column number followed by the contents of the new cell (e.g. "Paris, column one, two bedroom" or "Paris chalet, column two, fifty-two").
