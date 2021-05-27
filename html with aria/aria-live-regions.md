@@ -70,7 +70,7 @@ If the `role="alert"` attribute was placed on the `<p>` element instead, the ent
 
 ## `aria-atomic`
 
-The `aria-atomic` attribute determines whether or not the entirety of a live region is announced when an update occurs, rather than just the element inside the live region.
+The `aria-atomic` attribute determines whether or not the entirety of a live region is announced when an update occurs, rather than just the element inside the live region. Checkout [Basic examples: aria-atomic](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Live_Regions#basic-examples-aria-atomic) to see a couple of other examples that use the attribute.
 
 From the `aria-live="polite"` example above, only the contents of the dynamic paragraph was announced by the screen reader. With `aria-atomic="true"`:
 
