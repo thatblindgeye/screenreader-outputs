@@ -6,7 +6,7 @@ The `aria-live` attribute helps users of assistive technologies to be notified w
 
 If an element is updated multiple times over a short span of time and the screen reader is busy announcing something else, the screen reader may announce every update that was made in the updated element. To see an example of this, checkout the [ARIA Live Regions Screen Reader Demo](https://www.youtube.com/watch?v=9nZnTdSAkH0&t=43s) on Youtube. Keep in mind that the video was posted in 2010, so some things may be out of date, but it still provides a live demo of this scenario.
 
-<br>
+<br><br>
 
 ## `aria-live="polite"`
 
@@ -14,12 +14,14 @@ The "polite" value, or a role that is implicitly "polite", should be used for im
 
 When a live region has the `aria-live="polite"` attribute, or a role which is implicitly "polite", the screen reader will usually announce any changes in the live region at the next opportunity, either when the user finishes typing or when the screen reader finishes speaking, without interrupting what the screen reader may currently be announcing.
 
+<br>
+
     // HTML
     <p aria-live="polite">My favorite paragraph is <span id="dynamic-paragraph">red</span></p>
     <button type="button" id="timer-button">Click to Start Timer</button>
 
     <p>I am a static paragraph. I definitely will never, ever get interrupted by any dynamic updates.</p>
-    
+
     // JavaScript
     const paragraph = document.getElementById("dynamic-paragraph");
     const startButton = document.getElementById("timer-button");
@@ -41,9 +43,11 @@ When a live region has the `aria-live="polite"` attribute, or a role which is im
 
 **Screen reader (pressing the button to start the timer, then pressing the `down arrow` key to have the screen reader announce the second paragraph):** "I am a static paragraph. I definitely will never, ever get interrupted by any dynamic updates. White. Purple. Blue."
 
+<br>
+
 **Example notes:** By the time the screen reader finished announcing the second paragraph, the dynamic paragraph had been updated three times, changing to "white", then "purple", and finally "blue". Afterwards, the screen reader announced the new contents of the `<span id="dynamic-paragraph">` element each time it was updated every 3 seconds ("green", "yellow", etc.).
 
-<hr>
+<br><br>
 
 ## `aria-live="assertive"`
 
@@ -55,6 +59,8 @@ According to [accessibilityresources.org](https://accessibilityresources.org/ari
 
 Using the same example in the `aria-live="polite"` section above, the HTML gets changed to:
 
+<br>
+
     <p >My favorite paragraph is <span role="alert" id="dynamic-paragraph">red</span></p>
     <button type="button" id="update-button">Click to Start Timer</button>
 
@@ -62,17 +68,23 @@ Using the same example in the `aria-live="polite"` section above, the HTML gets 
 
 **Screen reader (pressing the button to start the timer, then pressing the `down arrow` key to have the screen reader announce the second paragraph):** "I am a static paragraph. I def- alert white. I am a static paragraph. Alert purple. I am a static paragraph. Alert blue."
 
+<br>
+
 **Example notes:** The `role="alert"` attribute was used on the dynamic paragraph instead of the `aria-live="assertive"` attribute on the `<p>` element due to the issue with using "assertive" with the NVDA and JAWS screen readers.
 
 If the `role="alert"` attribute was placed on the `<p>` element instead, the entire `<p>` element would get announced, e.g. "alert my favorite color is white."
 
+<br>
 <hr>
+<br>
 
 ## `aria-atomic`
 
 The `aria-atomic` attribute determines whether or not the entirety of a live region is announced when an update occurs, rather than just the element inside the live region. Checkout [Basic examples: aria-atomic](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Live_Regions#basic-examples-aria-atomic) to see a couple of other examples that use the attribute.
 
 From the `aria-live="polite"` example above, only the contents of the dynamic paragraph was announced by the screen reader. With `aria-atomic="true"`:
+
+<br>
 
     <p aria-live="polite" aria-atomic="true">My favorite paragraph is <span id="dynamic-paragraph">red</span></p>
     <button type="button" id="timer-button">Click to Start Timer</button>
@@ -81,8 +93,10 @@ From the `aria-live="polite"` example above, only the contents of the dynamic pa
 
 **Screen reader (pressing the button to start the timer, then pressing the `down arrow` key to have the screen reader announce the second paragraph):** "I am a static paragraph. I definitely will never, ever get interrupted by any dynamic updates. My favorite color is white. My favorite color is purple. My favorite color is blue."
 
+<br><br>
+
 Here's an example using some simple nesting:
-    
+
     // HTML
     <div aria-live="polite">
         Here is some placeholder text.
@@ -93,7 +107,7 @@ Here's an example using some simple nesting:
         </div>
     </div>
     <button type="button" id="update-button">Click to Update</button>
-    
+
     // JavaScript
     const content1 = document.getElementById("dynamic-content1");
     const content2 = document.getElementById("dynamic-content2");
@@ -108,14 +122,18 @@ Here's an example using some simple nesting:
 
 **Screen reader (pressing the button):** "Just for good measure. And here's some dynamic content."
 
+<br>
+
 **Example notes:** Notice that the screen reader announced the second updated `<div>` first ("Just for good measure"). If the function in the JavaScript file had the `.textContent` lines reversed, the screen reader would announce the updates in the order that the HTML is laid out.
 
 If the top level `<div>` element had the `aria-atomic="true"` attribute, the screen reader would have announced, "Here is some placeholder text. Just a little more placeholder. And here's some dynamic content. Just for good measure." twice, once for each update that occurred within the ARIA live region.
 
+<br>
 <hr>
+<br>
 
 ## Updating Content vs Updating Display
-    
+
     // HTML
     <div aria-live="polite">
         Here is some placeholder text.
@@ -125,12 +143,12 @@ If the top level `<div>` element had the `aria-atomic="true"` attribute, the scr
         </div>
     </div>
     <button type="button" id="show-button">Click to Show</button>
-    
+
     // CSS
     #dynamic-content1 {
       display: none;
     }
-    
+
     // JavaScript
     const content1 = document.getElementById("dynamic-content1");
     const updater = document.getElementById("show-button");
@@ -140,12 +158,13 @@ If the top level `<div>` element had the `aria-atomic="true"` attribute, the scr
     }
 
     updater.addEventListener("click", updateContainers)
-    
+
 **Screen reader (Firefox - pressing the button):** "I'm no longer hidden."
 
 **Screen reader (Chrome and Edge - pressing the button):** "Here is some placeholder text dot. Just a little more placeholder dot. I'm no longer hidden."
 
+<br>
+
 **Example notes:** The result was the same in Firefox when using the `visibility: hidden` property in CSS and updating it to `visibility: visible` in JavaScript. Keep in mind that not every screen reader may announce updates that stem from updating the display or visibility of an element, though.
 
 When the `visibility` property was updated in Chrome and Edge, the screen reader announced either just the updated `<div>` ("I'm no longer hidden"), or everything inside of the top level `<div>` ("Here is some placeholder text...", etc.), depending on whether the `aria-atomic="true"` attribute was added or not.
-

@@ -1,20 +1,28 @@
 ## `aria-label`
 
-The `aria-label` attribute simply labels an element with the specified string when there is no visible label on the page. This can override any native labeling on the element.
+The `aria-label` attribute labels an element with the specified string when there is no visible label on the page. This can override any native labeling on the element.
 
 Per [Using the aria-label attribute](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-label_attribute), the `aria-label` attribute should only be used on interactive elements (buttons, checkboxes, etc.), landmark elements (main, nav, etc.), elements with an explicit widget role, and `iframe` or `img` elements.
 
 According to [HTML 5 and ARIA Landmarks](https://dequeuniversity.com/assets/html/jquery-summit/html5/slides/landmarks.html), the `<article>` and `<region>` elements are not considered ARIA landmarks and will be unaffected by the `aria-label` attribute.
 
-<br>
+<br><br>
+
+### `<div>` Element with Text Content
 
     <div>This is a div container.</div>
-    
+
     <div aria-label="Label for the div container">This is a div container.</div>
 
 **Screen reader:** "This is a d i v container."
 
 <br>
+
+**Example notes:** Notice how the screen reader did not announce the `aria-label`, but the native text content.
+
+<br><br>
+
+### `<div>` Element with Text Content and the `role` Attribute
 
     <div role="button" aria-label="Label for the button" tabindex="0">A div acting as a button</div>
 
@@ -22,23 +30,35 @@ According to [HTML 5 and ARIA Landmarks](https://dequeuniversity.com/assets/html
 
 <br>
 
+**Example notes:** Unlike the example above, the screen reader now announced the `aria-label`, due to the `role` attribute being added.
+
+<br><br>
+
+### Landmark Element with Text Content
+
     <main aria-label="Label for the main container">This is a main container.</main>
 
 **Screen reader:** "Label for the main container, main landmark, this is a main container."
 
-<br>
+<br><br>
 
-    <a href="https://www.google.com/" aria-label="Google (opens in a new window)">Google</a>
+### `<a>` Element with Text Content
 
-**Screen reader:** "Link google. Opens in a new window." or "Visited link google. Opens in a new window."
+    <a href="https://www.google.com/" aria-label="Google (opens in a new window)">Go To Google</a>
 
-<br>
+**Screen reader:** "Link, google. Opens in a new window." or "Visited link, google. Opens in a new window."
+
+<br><br>
+
+### `<button>` Element with Text Content
 
     <button type="button" aria-label="Close">X</button>
 
 **Screen reader:** "Button close."
 
-<br>
+<br><br>
+
+### Input with a Native `<label>` Element
 
     <label>
       Name:
@@ -47,52 +67,66 @@ According to [HTML 5 and ARIA Landmarks](https://dequeuniversity.com/assets/html
 
 **Screen reader (Firefox - on page load):** "Clickable name edit has auto-complete."
 
-**Screen reader (Firefox - using the `tab` key to navigate the page and give inputs focus):** "Enter a name edit has auto-complete blank."
+**Screen reader (Firefox - `tab` key to give focus to the input):** "Enter a name edit has auto-complete blank."
 
 **Screen reader (Chrome and Edge - on page load):** "Name, enter a name edit."
 
-**Screen reader (Chrome and Edge - using the `tab` key to navigate the page and give inputs focus):** "Enter a name edit blank."
+**Screen reader (Chrome and Edge - `tab` key to give focus to the input):** "Enter a name edit blank."
 
-<br>
+<br><br>
+
+### Unordered List
 
     <ul aria-label="shopping list">
         <li>Butter</li>
         <li>Milk</li>
         <li>Eggs</li>
     </ul>
-    
+
 **Screen reader:** "Shopping list, list with three items, bullet butter, bullet milk, bullet eggs."
-
-**Examples notes:** The text "list" was repeated because the screen reader read first the `aria-label`, followed by a description of the `<ul>` element.
-
-Though the screen reader did announce the `aria-label`, it may be worth following the recommendation from [Using the aria-label attribute](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-label_attribute) as noted at the top of the page.
-
-The screen reader announced "bullet" before each list item due to the CSS for the testing page not having a rule to remove the list-style-type. When the list-style-type is set to none, the screen reader did not announce "bullet". This applies to the below example as well.
 
 <br>
 
+**Examples notes:** The text "list" was repeated because the screen reader read first the `aria-label`, followed by the role of the `<ul>` element.
+
+Though the screen reader did announce the `aria-label`, it may be worth following the recommendation at the top of the page for when to use the `aria-label` attribute.
+
+The screen reader announced "bullet" before each list item due to the CSS for the testing page not having a rule to remove the list-style-type. When the list-style-type is set to none, the screen reader did not announce "bullet". This applies to the below example as well.
+
+<br><br>
+
+### Landmark Element with an Unordered List
+
     <nav aria-label="main navigation">
-        <ul >
+        <ul>
             <li>Home</li>
             <li>About</li>
             <li>Contact</li>
         </ul>
     </nav>
-    
+
 **Screen reader:** "Main navigation, navigation landmark, list with three items, bullet home, bullet about, bullet contact."
+
+<br>
 
 **Examples notes:** The text "navigation" was repeated because the screen reader read first the `aria-label`, followed by stating the type of landmark.
 
-<br><br>
+<br>
+<hr>
+<br>
 
 ## `aria-labelledby`
 
-The `aria-labelledby` attribute is similar to the `aria-label` attribute, except it requires creating a relationship between elements by using ID's. Think of `aria-labelledby` as though it were the `<label>` tag linking itself with a form input with the `for` attribute.
+The `aria-labelledby` attribute is similar to the `aria-label` attribute, except it requires creating a relationship between elements with ID's. Think of the `aria-labelledby` attribute as being similar to the `<label>` element linking itself with a form input with the `for` attribute.
+
+When you use the `aria-labelledby` attribute, you pass in the ID's of the elements that will label it as strings, e.g. `aria-labelledby="first-label"`. You can enter more than one element within the attribute, separated by spaces, similar to how the `class` attribute can have multiple classes entered.
 
 This attribute should be used to convey essential information to the user. It also overrides all other labels for an element, including `aria-label` and the native `<label>` tag (the `<label>` tag is only overridden when tabbing to give the input focus, otherwise the native `<label>` gets announced normally).
 
-<br>
-    
+<br><br>
+
+### Single Label on Multiple Inputs
+
     <div id="myBillingId">Billing</div>
     <div>
       <div id="myNameId">Name</div>
@@ -103,22 +137,30 @@ This attribute should be used to convey essential information to the user. It al
       <input type="text" aria-labelledby="myBillingId myAddressId"/>
     </div>
 
-**Screen reader (Firefox - using the `tab` key to navigate the page and give inputs focus):** "Billing name edit has auto-complete blank." and "Billing address edit has auto-complete blank."
+**Screen reader (Firefox - `tab` key to give focus to the inputs):** "Billing name edit has auto-complete blank." and "Billing address edit has auto-complete blank."
 
-**Screen reader (Chrome and Edge - using the `tab` key to navigate the page and give inputs focus):** "Billing name edit blank." and "Billing address edit blank."
+**Screen reader (Chrome and Edge - `tab` key to give focus to the inputs):** "Billing name edit blank." and "Billing address edit blank."
+
+<br>
 
 **Example notes:** This example was taken from the MDN page on [Using the aria-labelledby attribute](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-labelledby_attribute).
 
-<br>
+<br><br>
+
+### Single Label on a Single Input
 
     <p>Please select the <span id="mysldr-lbl">number of days for your trip</span></p>
     <input type="range" id="mysldr" aria-labelledby="mysldr-lbl"></div>
 
-**Screen reader (using the `tab` key to navigate the page and give inputs focus):** "Number of days for your trip slider 50."
+**Screen reader (`tab` key to give focus to the input):** "Number of days for your trip slider 50."
+
+<br>
 
 **Example notes:** This example was taken from the W3 page on [Using aria-labelledby to provide a name for user interface controls](https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA16).
 
-<br>
+<br><br>
+
+### Multiple Labels on a Single Input
 
     <label id="l1" for="f3">Notify me</label>
     <select name="amt" id="f3" aria-labelledby="l1 f3 l2">
@@ -126,32 +168,42 @@ This attribute should be used to convey essential information to the user. It al
       <option value="2">2</option>
     </select>
     <span id="l2" tabindex="-1">days in advance</span>
-    
+
 **Screen reader (Firefox - on page load):** "Clickable notify me combo box collapsed one days in advance."
 
-**Screen reader (Firefox - using the `tab` key to navigate the page and give inputs focus):** "Notify me one days in advance combo box one collapsed."
+**Screen reader (Firefox - `tab` key to give focus to the input):** "Notify me one days in advance combo box one collapsed."
 
 **Screen reader (Chrome and Edge - on page load):** "Notify me combo box collapsed one days in advance."
-    
-**Screen reader (Chrome and Edge - using the `tab` key to navigate the page and give inputs focus):** "Notify me days in advance combo box one collapsed."
+
+**Screen reader (Chrome and Edge - `tab` key to give focus to the input):** "Notify me days in advance combo box one collapsed."
+
+<br>
 
 **Example notes:** This example was taken from the W3 page on [Using aria-labelledby to provide a name for user interface controls](https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA16).
 
-<br>
+<br><br>
+
+### Removing the Label from the Accessibility Tree
 
     <span id="button-label" aria-hidden="true">Labelled by label</span>
     <button type="button" aria-labelledby="button-label">Native label</button>
-    
+
 **Screen reader:** "Button labelled by label."
 
-<br><br>
+<br>
+
+**Example notes:** The text content of the `<span>` element is only announced due to the `aria-labelledby` attribute on the `<button>` element. The `aria-hidden` attribute removes the `<span>` element from the accessibility tree, which means it won't be announced by screen readers on its own.
+
+<br>
+<hr>
+<br>
 
 ## `aria-describedby`
 
-The `aria-describedby` attribute works similarly to the `aria-labelledby` attribute by creating a relationship between elements using ID's. Unlike `aria-labelledby`, hwoever, `aria-describedby` conveys additional information that might be useful to a user.
+The `aria-describedby` attribute works similarly to the `aria-labelledby` attribute by creating a relationship between elements using ID's. Unlike `aria-labelledby`, hwoever, `aria-describedby` conveys additional information that might be useful to a user, and will be announced in addition to any other label on the element.
 
-<br>
-    
+<br><br>
+
     <label>
         Password:
         <input type="password" aria-describedby="password-reqs" />
@@ -166,25 +218,31 @@ The `aria-describedby` attribute works similarly to the `aria-labelledby` attrib
 
 **Screen reader (Firefox - on page load):** "Clickable password. Edit protected your password must contain, list with three items bullet, at least one capital letter, bullet at least one number, bullet at least one special character."
 
-**Screen reader (Firefox - using the `tab` key to navigate the page and give inputs focus):** "Password. Edit protected your password must contain, bullet at least one capital letter, bullet at least one number, bullet at least one special character, blank."
+**Screen reader (Firefox - `tab` key to give focus to the input):** "Password. Edit protected your password must contain, bullet at least one capital letter, bullet at least one number, bullet at least one special character, blank."
 
 **Screen reader (Chrome and Edge - on page load):** "Password. Edit protected your password must contain, list with three items bullet, at least one capital letter, bullet at least one number, bullet at least one special character."
 
-**Screen reader (Chrome and Edge - using the `tab` key to navigate the page and give inputs focus):** "Password. Edit protected your password must contain, at least one capital letter, at least one number, at least one special character, blank."
+**Screen reader (Chrome and Edge - `tab` key to give focus to the input):** "Password. Edit protected your password must contain, at least one capital letter, at least one number, at least one special character, blank."
 
-<br><br>
+<br>
+<hr>
+<br>
 
-## `aria-label` vs `aria-labelledby` vs `aria-describedby` vs `<label>`
+## `aria-label` vs `aria-labelledby` vs `aria-describedby`
+
+### Without `aria-hidden` Attribute
 
     <span id="labelled">ARIA labelled by label</span>
     <button type="button" aria-label="An ARIA label" aria-labelledby="labelled" aria-describedby="described">Native label</button>
     <span id="described">ARIA described by description</span>
 
-**Screen reader (on page load):** "ARIA labelled by label button ARIA labelled by label ARIA described by description."
+**Screen reader (on page load):** "ARIA labelled by label, button, ARIA labelled by label ARIA described by description."
 
-**Screen reader (using the `tab` key to navigate the page and give button focus):** "ARIA labelled by label button ARIA described by description."
+**Screen reader (`tab` key to focus to the button):** "ARIA labelled by label, button, ARIA described by description."
 
-<br>
+<br><br>
+
+### With `aria-hidden` Attribute
 
     <span id="labelled" aria-hidden="true">ARIA labelled by label</span>
     <button type="button" aria-label="An ARIA label" aria-labelledby="labelled" aria-describedby="described">Native label</button>
@@ -192,9 +250,11 @@ The `aria-describedby` attribute works similarly to the `aria-labelledby` attrib
 
 **Screen reader (on page load):** "Button ARIA labelled by label."
 
-**Screen reader (using the `tab` key to navigate the page and give button focus):** "ARIA labelled by label button ARIA described by description."
+**Screen reader (`tab` key to focus to the button):** "ARIA labelled by label button ARIA described by description."
 
-<br>
+<br><br>
+
+## `aria-label` vs `aria-labelledby` vs `aria-describedby` vs `<label>`
 
     <span id="labelled">ARIA labelled by label</span>
     <label for='input'>Native label:</label>
@@ -203,10 +263,8 @@ The `aria-describedby` attribute works similarly to the `aria-labelledby` attrib
 
 **Screen reader (Firefox- on page load):** "ARIA labelled by label clickable native label. Edit has auto-complete ARIA described by description."
 
-**Screen reader (Firefox- using the `tab` key to navigate the page and give input focus):** "ARIA labelled by label edit has auto-complete ARIA described by description blank."
+**Screen reader (Firefox- `tab` key to focus to the input):** "ARIA labelled by label edit has auto-complete ARIA described by description blank."
 
 **Screen reader (Chrome and Edge- on page load):** "ARIA labelled by label native label. Edit ARIA described by description."
 
-**Screen reader (Chrome and Edge- using the `tab` key to navigate the page and give input focus):** "ARIA labelled by label edit ARIA described by description blank."
-
-
+**Screen reader (Chrome and Edge- `tab` key to focus to the input):** "ARIA labelled by label edit ARIA described by description blank."

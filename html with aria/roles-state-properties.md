@@ -6,10 +6,9 @@ Adding a role or an ARIA state or property can help define or change semantic me
 
 Checkout [ARIA roles, state, and properties](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques) and the [list of ARIA roles references](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles) on MDN for lists of the different roles, state, and properties available.
 
-<br>
+<br><br>
 
 ## Adding a `role`
-
 
 The `role` attribute can give semantic meaning to an element or change an element's semantics (such as a `<div>` or `<span>`).
 
@@ -20,13 +19,13 @@ Secondly, caution should be used when adding the `role` attribute to an element.
 <br>
 
     <div>I'm just a div</div>
-    
+
 **Screen reader:** "I'm just a d i v."
 
-<br>
-    
+<br><br>
+
     <div role="button">I'm almost a button!</div>
-    
+
 **Screen reader:** "Button, I'm almost a button."
 
 <br>
@@ -37,16 +36,22 @@ Simply adding a `role` to an element won't automatically give it the same functi
 
 Turning a `<div>` into a button and adding the correct functionality via JavaScript may not be the most difficult thing, but turning a `<div>` into a custom checkbox using ARIA can require a few more extra steps.
 
+<br><br>
+
     <div id="checkbox-label">Check this checkbox:</div>
     <div id="custom-checkbox" aria-labelledby="checkbox-label" role="checkbox" tabindex="0"></div>
-    
+
 **Screen reader (on page load or using the `tab` key to navigate the page and give the checkbox focus:** "Check this checkbox, checkbox not checked."
 
+<br>
+<hr>
 <br>
 
 ## Adding State and Properties
 
 Using the above checkbox example, there is currently nothing that will change the checked state. What the custom checkbox needs is the `aria-checked` attribute, and a little JavaScript.
+
+<br><br>
 
     // HTML
     <div id="checkbox-label">Check this checkbox:</div>
@@ -66,12 +71,12 @@ Using the above checkbox example, there is currently nothing that will change th
     checkbox.addEventListener("click", toggleCheckbox)
     checkbox.addEventListener("keydown", toggleCheckbox)
 
+<br>
+
 When clicking the custom checkbox now, the screen reader announced the new checked state each time, e.g. "checked" or "not checked".
 
-Keep in mind that the `<div id="checkbox-label">` element doesn't truly act like a label and would require a bit more JavaScript to add in that functionality (clicking the label counts as clicking the checkbox itself). 
+Keep in mind that the `<div id="checkbox-label">` element doesn't truly act like a label and would require a bit more JavaScript to add in that functionality (clicking the label counts as clicking the checkbox itself).
 
 Another thing to keep in mind is that a custom checkbox that uses a `role` and ARIA attributes may not be beneficial inside of a form that gets submitted to a server, as the custom checkbox information may not be submitted like a native checkbox's information would be.
 
 There is also a slightly easier/better way to create a [custom checkbox from W3Schools](https://www.w3schools.com/howto/howto_css_custom_checkbox.asp), which would also solve the above issue when submitting a form to a server, but this example was more meant to show how extra steps need to be taken when using the `role` and other ARIA attributes.
-
-

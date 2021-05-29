@@ -24,7 +24,7 @@
             <input type="radio" id="blue" name="color" value="blue">
             <label for="blue">Blue</label><br>
             <input type="radio" id="other" name="color" value="other">
-            <label for="other">Other</label> 
+            <label for="other">Other</label>
         </fieldset>
     </form>
 
@@ -32,4 +32,6 @@
 
 **Screen reader (Edge and Chrome - on page load):** "Grouping first section. Name edit, city edit. Out of grouping." and "Grouping second section. Checkbox not checked would you like to check this checkbox. Select your favorite color, radio button not checked red, radio button not checked blue, radio button not checked other."
 
-**Example notes:** When tabbing between input fields, the screen reader annoucned the name of each fieldset upone entering it, e.g. "Second section grouping".
+<br>
+
+**Example notes:** When tabbing between input fields, the screen reader annoucned the name of each fieldset upon entering it, e.g. "Second section grouping".

@@ -1,6 +1,6 @@
 # `<select>`
 
-<br>
+## Simple `<select>` Element
 
     <label>Choose a color:
       <select name="color">
@@ -10,20 +10,24 @@
           <option value="blue">Blue</option>
       </select>
     </label
-    
+
 **Screen reader (Firefox - on page load):** "Clickable choose a color, combo box collapsed select an option."
 
-**Screen reader (Firefox - pressing the `space` key to open the select box):** "Combo box expanded, select an option list."
+**Screen reader (Firefox - `space` key to open the select box):** "Combo box expanded, select an option list."
 
 **Screen reader (Chrome and Edge - on page load):** "Choose a color, combo box collapsed select an option."
 
-**Screen reader (Chrome and Edge - pressing the `space` key to open the select box):** "Expanded list, select an option one of four."
+**Screen reader (Chrome and Edge - `space` key to open the select box):** "Expanded list, select an option one of four."
+
+<br>
 
 **Example notes:** When navigating between the different options, the screen reader announced the name of the option followed by its number in the list, e.g. "red two of four".
 
-When an option has the `disabled` attribute added to it, the screen reader still counted it in the total number of options even though it could not be selected.
+When an option has the `disabled` attribute added to it, the screen reader still counted it in the total number of options even though it could not be selected or tabbed to.
 
-<br>
+<br><br>
+
+## With `<optgroup>` Elements
 
     <label>Choose your favorite dessert:
         <select>
@@ -38,18 +42,22 @@ When an option has the `disabled` attribute added to it, the screen reader still
             </optgroup>
         </select>
     </label>
-    
+
 **Screen reader (Firefox - on page load):** "Clickable choose your favorite dessert, combo box collapsed chocolate."
 
-**Screen reader (Firefox - pressing the `space` key to open the select box):** "Combo box expanded, chocolate list, ice cream grouping, chocolate one of three level two."
+**Screen reader (Firefox - `space` key to open the select box):** "Combo box expanded, chocolate list, ice cream grouping, chocolate one of three level two."
 
 **Screen reader (Chrome and Edge - on page load):** "Choose your favorite dessert, combo box collapsed chocolate."
 
-**Screen reader (Chrome and Edge - pressing the `space` key to open the select box):** "Expanded list, chocolate one of five."
-
-**Example notes:** Only in Firefox did the screen reader indicate when tabbing between the different groupings of the `<select>` element.
+**Screen reader (Chrome and Edge - `space` key to open the select box):** "Expanded list, chocolate one of five."
 
 <br>
+
+**Example notes:** Only in Firefox did the screen reader indicate when tabbing between the different `<optgroup` elements of the input.
+
+<br><br>
+
+## With the `multiple` Attribute
 
     <label>Choose your favorite pet:
         <select multiple>
@@ -59,13 +67,15 @@ When an option has the `disabled` attribute added to it, the screen reader still
             <option>Bird</option>
         </select>
     </label>
-    
+
 **Screen reader (Firefox - on page load):** "Clickable choose your favorite pet, list clickable dog."
 
-**Screen reader (Firefox - pressing the `tab` key to navigate the page and give focus to the `<select>` element):** "Choose your favorite pet, list, dog one of four."
+**Screen reader (Firefox - `tab` key to give focus to the input):** "Choose your favorite pet, list, dog one of four."
 
 **Screen reader (Chrome and Edge - on page load):** "Choose your favorite pet, list clickable dog."
 
-**Screen reader (Chrome and Edge - pressing the `tab` key to navigate the page and give focus to the `<select>` element):** "Choose your favorite pet, list."
+**Screen reader (Chrome and Edge - `tab` key to give focus to the input):** "Choose your favorite pet, list."
 
-**Example notes:** The screen reader did not indicate that multiple items were selected when tabbing back into the `<select>` element.
+<br>
+
+**Example notes:** The screen reader did not indicate that multiple items were selected when tabbing back into the input.
