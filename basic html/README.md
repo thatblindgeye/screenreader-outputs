@@ -25,9 +25,11 @@
 [`<time>` Element](https://github.com/thatblindgeye/screenreader-outputs/blob/main/basic%20html/time_element.md)
 <br>
 [`<video>` Elements](https://github.com/thatblindgeye/screenreader-outputs/blob/main/basic%20html/video_elements.md)
+<br>
+[JavaScript's `focus()` Method](https://github.com/thatblindgeye/screenreader-outputs/blob/main/basic%20html/javascript-focus.md)
 
 <br>
 
-This section covers basic HTML tags. For the purpsoses of this repo, 'basic tags' are defined as either single tags or tags that don't have many nested child tags.
+This section covers basic HTML elements. For the purpsoses of this repo, 'basic elements' are defined as either single elements or elements that don't have many nested child elements.
 
-For example, a more complex `<form>` tag would be included in the Nested HTML Tags section, but an `<audio>` tag with a couple of nested `<source>` tags would be included in this section.
+For example, a more complex `<form>` element would be included in the Nested HTML section, but an `<audio>` element with a couple of nested `<source>` elements would be included in this section.
