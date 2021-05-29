@@ -23,8 +23,13 @@ For a deeper dive, checkout [ARIA Authoring Practices 1.1](https://www.w3.org/TR
 A great playlist to watch for accessibility in general are the [A11ycasts with Rob Dodson on Youtube](https://www.youtube.com/playlist?list=PLNYkxOF6rcICWx0C9LVWWVqvHlYJyqw7g). In terms of ARIA and screen reader accessibility, the following videos are worth a watch:
 
 [Screen Reader Basics: VoiceOver](https://www.youtube.com/watch?v=5R-6WvAihms&list=PLNYkxOF6rcICWx0C9LVWWVqvHlYJyqw7g&index=8)
+<br>
 [Screen Reader Basics: NVDA](https://www.youtube.com/watch?v=Jao3s_CwdRU&list=PLNYkxOF6rcICWx0C9LVWWVqvHlYJyqw7g&index=10)
+<br>
 [Alerts!](https://www.youtube.com/watch?v=5lzAj1ahRSI&list=PLNYkxOF6rcICWx0C9LVWWVqvHlYJyqw7g&index=11)
+<br>
 [Intro to ARIA](https://www.youtube.com/watch?v=g9Qff0b-lHk&list=PLNYkxOF6rcICWx0C9LVWWVqvHlYJyqw7g&index=14&t=222s)
+<br>
 [States and Properties in ARIA](https://www.youtube.com/watch?v=88tfx3jLV_M&list=PLNYkxOF6rcICWx0C9LVWWVqvHlYJyqw7g&index=15)
+<br>
 [How to Build a Toggle Button](https://www.youtube.com/watch?v=16gvkPfPIx4&list=PLNYkxOF6rcICWx0C9LVWWVqvHlYJyqw7g&index=26)
