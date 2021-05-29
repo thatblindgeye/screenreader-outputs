@@ -2,29 +2,29 @@
 
 ## Table of Contents
 
-[General Basic Elements](https://github.com/thatblindgeye/screenreader-outputs/blob/main/basic%20html%20tags/general_basic_tags.md)
+[General Basic Elements](https://github.com/thatblindgeye/screenreader-outputs/blob/main/basic%20html/general_basic_elements.md)
 <br>
-[`<a>` Element](https://github.com/thatblindgeye/screenreader-outputs/blob/main/basic%20html%20tags/a_tags.md)
+[`<a>` Element](https://github.com/thatblindgeye/screenreader-outputs/blob/main/basic%20html/a_element.md)
 <br>
-[`<audio>` Elements](https://github.com/thatblindgeye/screenreader-outputs/blob/main/basic%20html%20tags/audio_tags.md)
+[`<audio>` Elements](https://github.com/thatblindgeye/screenreader-outputs/blob/main/basic%20html/audio_elements.md)
 <br>
-[`<button>` Element](https://github.com/thatblindgeye/screenreader-outputs/blob/main/basic%20html%20tags/button_tags.md)
+[`<button>` Element](https://github.com/thatblindgeye/screenreader-outputs/blob/main/basic%20html/button_element.md)
 <br>
-[Graphics]()
+[Graphics](https://github.com/thatblindgeye/screenreader-outputs/blob/main/basic%20html/graphics.md)
 <br>
-[`<input>` Elements](https://github.com/thatblindgeye/screenreader-outputs/blob/main/basic%20html%20tags/input_tags.md)
+[`<input>` Elements](https://github.com/thatblindgeye/screenreader-outputs/blob/main/basic%20html/input_elements.md)
 <br>
-[`<label>` Element](https://github.com/thatblindgeye/screenreader-outputs/blob/main/basic%20html%20tags/label_tags.md)
+[`<label>` Element](https://github.com/thatblindgeye/screenreader-outputs/blob/main/basic%20html/label_element.md)
 <br>
-[List Elements]()
+[List Elements](https://github.com/thatblindgeye/screenreader-outputs/blob/main/basic%20html/list_elements.md)
 <br>
-[`<meter>` and `<progress>` Elements](https://github.com/thatblindgeye/screenreader-outputs/blob/main/basic%20html%20tags/meter_and_progress_tags.md)
+[`<meter>` and `<progress>` Elements](https://github.com/thatblindgeye/screenreader-outputs/blob/main/basic%20html/meter_and_progress_elements.md)
 <br>
-[`<select>` Elements]()
+[`<select>` Elements](https://github.com/thatblindgeye/screenreader-outputs/blob/main/basic%20html/select_elements.md)
 <br>
-[`<time>` Element](https://github.com/thatblindgeye/screenreader-outputs/blob/main/basic%20html%20tags/time_tags.md)
+[`<time>` Element](https://github.com/thatblindgeye/screenreader-outputs/blob/main/basic%20html/time_element.md)
 <br>
-[`<video>` Elements](https://github.com/thatblindgeye/screenreader-outputs/blob/main/basic%20html%20tags/video_tags.md)
+[`<video>` Elements](https://github.com/thatblindgeye/screenreader-outputs/blob/main/basic%20html/video_elements.md)
 
 <br>
 
