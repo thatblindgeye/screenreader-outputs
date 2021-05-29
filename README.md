@@ -2,13 +2,13 @@
 
 ## Table of Contents
 
-[Accessibility Dev Tools](#)
+[Accessibility Dev Tools](https://github.com/thatblindgeye/screenreader-outputs/blob/main/accessibility-dev-tools.md)
 <br>
-[Basic HTML](https://github.com/thatblindgeye/screenreader-outputs/tree/main/basic%20html%20tags)
+[Basic HTML](https://github.com/thatblindgeye/screenreader-outputs/tree/main/basic%20html)
 <br>
-[Nested HTML](https://github.com/thatblindgeye/screenreader-outputs/tree/main/nested%20html%20tags)
+[Nested HTML](https://github.com/thatblindgeye/screenreader-outputs/tree/main/html%20with%20aria)
 <br>
-[HTML with ARIA](https://github.com/thatblindgeye/screenreader-outputs/tree/main/html%20with%20aria)
+[HTML with ARIA](https://github.com/thatblindgeye/screenreader-outputs/tree/main/nested%20html)
 
 <br>
 
