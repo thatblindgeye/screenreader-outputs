@@ -2,19 +2,19 @@
 
 ## Table of Contents
 
-[Buttons with Icons]()
+[Buttons with Icons](https://github.com/thatblindgeye/screenreader-outputs/blob/main/nested%20html/buttons_with_icons.md)
 <br>
-[`<datalist>` Elements]()
+[`<datalist>` Elements](https://github.com/thatblindgeye/screenreader-outputs/blob/main/nested%20html/datalist_elements.md)
 <br>
-[Image Links]()
+[Image Links](https://github.com/thatblindgeye/screenreader-outputs/blob/main/nested%20html/image_links.md)
 <br>
-[Image Maps]()
+[Image Maps](https://github.com/thatblindgeye/screenreader-outputs/blob/main/nested%20html/image_maps.md)
 <br>
-[Multi-Input Forms]()
+[Multi-Input Forms](https://github.com/thatblindgeye/screenreader-outputs/blob/main/nested%20html/multi_input_forms.md)
 <br>
-[`<output>` Element]()
+[`<output>` Element](https://github.com/thatblindgeye/screenreader-outputs/blob/main/nested%20html/output_element.md)
 <br>
-[`<table>` Elements]()
+[`<table>` Elements](https://github.com/thatblindgeye/screenreader-outputs/blob/main/nested%20html/table_elements.md)
 
 <br>
 
