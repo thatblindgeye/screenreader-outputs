@@ -2,21 +2,19 @@
 
 ## Table of Contents
 
-[Accessibility Dev Tools](https://github.com/thatblindgeye/screenreader-outputs/blob/main/accessibility-dev-tools.md)
-<br>
 [Basic HTML](https://github.com/thatblindgeye/screenreader-outputs/tree/main/basic%20html)
 <br>
-[Nested HTML](https://github.com/thatblindgeye/screenreader-outputs/tree/main/html%20with%20aria)
+[Nested HTML](https://github.com/thatblindgeye/screenreader-outputs/tree/main/nested%20html)
 <br>
-[HTML with ARIA](https://github.com/thatblindgeye/screenreader-outputs/tree/main/nested%20html)
+[HTML with ARIA](https://github.com/thatblindgeye/screenreader-outputs/tree/main/html%20with%20aria)
 
 <br>
 
 The purpose of this repo is to help give some context to non-screen reader users about how screen readers may announce the contents of a web page. The three main sections include basic HTML (simple links, buttons, etc.), nested HTML (images used as links, icons inside of a button, etc.), and HTML with ARIA attributes.
 
-Each scenario will usually include multiple examples, such as a tag with different attributes or comparing less semantic tags against the more appropriate semantic tags.
+Each scenario will usually include multiple examples, such as an element with different attributes or comparing less semantic elements against the more appropriate semantic ones.
 
-Each example will contain the actual HTML code (to see which tags and attributes are being used) and the output from the screen reader itself. The output may state whether the output is for a specific browser only or based on a specific action. If there is no specific browser/action stated, assume that the output is for all browsers tested for any reasonable action (initial page load, tabbing through the page, etc.).
+Each example will contain the actual HTML code (to see which elements and attributes are being used) and the output from the screen reader itself. The output may state whether the output is for a specific browser only or based on a specific action (loading the page, tabbing through the page, etc). If there is no specific browser/action stated, assume that the output is for all browsers tested and any action.
 
 Some scenarios will include interactive elements, such as checkboxes, and show both the initial output (when the screen reader reaches that element from user navigation or on iniital page load) and any additional outputs (such as the element itself or anything else on the page changing/updating as a result of the interaction).
 
@@ -26,16 +24,12 @@ The announcement of some elements may differ depending on whether the screen rea
 
 For more in depth information regarding web accessibility in general, please visit the [Web Accessibility Initiative](https://www.w3.org/WAI/). There you can find plenty of best practices, tutorials, tools to evaluate accessibility, and more.
 
+If you have suggestions for an example you think should be included in this repo, feel free to submit a pull request with a `.md` file that includes a code example. If you have run it through NVDA or another screen reader yourself, feel free to include any necessary information (the screen reader and/or browsers used, what the output was when the page loaded or when manually navigating the page, any notes for the example, etc.). Otherwise I can run it through NVDA and add the outputs.
+
 <br>
 
 ## Quick notes
 
-One way you may be able to get an idea for what a screen reader may announce for a particular element without having/using a screen reader is by inspecting an element in the dev tools. The Accessibility Dev Tools section goes over this in more detail.
-
-ARIA Landmarks are the `<aside>`, `<footer>`, `<form>`, `<header>`, `<main>`, `<nav>`, and `<section>` HTML elements. Landmarks can help screen reader users navigate through a web page using keyboard shortcuts based on the screen reader being used. The W3 page on [HTML5 Sectioning Elements](https://www.w3.org/TR/2017/NOTE-wai-aria-practices-1.1-20171214/examples/landmarks/HTML5.html) page has information regarding what default ARIA role each HTML element is, as well as buttons to toggle an outline around each landmark or heading on the page.
-
-Screen readers may also have other keyboard shortcuts for navigating through a page. For example, with the NVDA screen reader, pressing the `k` key will navigate the user to the next link on the page (this is a reason why giving links meaningful names is important; navigating through a page's links and hearing "link click here" is not helpful to users of assistive technologies).
+Screen readers may have other keyboard shortcuts for navigating through a page. For example, with the NVDA screen reader, pressing the `k` key will navigate the user to the next link on the page (this is a reason why giving links meaningful names is important; navigating through a page's links and hearing "click here, link" is not helpful to users of assistive technologies).
 
 When the screen reader announces an element, it may also announce what the element's role or type is. For example, an `<a>` tag may be announced with "link" in addition to the text contents of the element, and a `<button>` tag may be announced similarly (except with "button" being announced).
-
-If you have suggestions for an example you think should be included in this repo, feel free to submit a pull request with a `.md` file that includes a code example. If you have run it through NVDA or another screen reader yourself, feel free to include any necessary information (the screen reader and/or browsers used, what the output was when the page loaded or when manually navigating the page, any notes for the example, etc.). Otherwise I can run it through NVDA and add the outputs.

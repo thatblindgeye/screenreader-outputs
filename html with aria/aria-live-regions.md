@@ -1,20 +1,8 @@
 # ARIA Live Regions
 
-The `aria-live` attribute helps users of assistive technologies to be notified when a page is dynamically updated. There are three types of ARIA live regions: "off" (usually the default), "polite", and "assertive".
-
-"Off" is only usually the default because there may be some roles (with the `role` attribute) that have an implicit `aria-live` value, such as `role="status"` having an implicit "polite" value or `role="alert"` having an implicit "assertive" value. For more information, see [Roles with implicit live region attributes](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Live_Regions#roles_with_implicit_live_region_attributes)
-
-If an element is updated multiple times over a short span of time and the screen reader is busy announcing something else, the screen reader may announce every update that was made in the updated element. To see an example of this, checkout the [ARIA Live Regions Screen Reader Demo](https://www.youtube.com/watch?v=9nZnTdSAkH0&t=43s) on Youtube. Keep in mind that the video was posted in 2010, so some things may be out of date, but it still provides a live demo of this scenario.
-
-<br><br>
-
 ## `aria-live="polite"`
 
-The "polite" value, or a role that is implicitly "polite", should be used for important updates to the page that a user should be aware of, but that aren't so critical that they need to know about the update immediately.
-
-When a live region has the `aria-live="polite"` attribute, or a role which is implicitly "polite", the screen reader will usually announce any changes in the live region at the next opportunity, either when the user finishes typing or when the screen reader finishes speaking, without interrupting what the screen reader may currently be announcing.
-
-<br>
+<br><br>
 
     // HTML
     <p aria-live="polite">My favorite paragraph is <span id="dynamic-paragraph">red</span></p>
@@ -51,12 +39,6 @@ When a live region has the `aria-live="polite"` attribute, or a role which is im
 
 ## `aria-live="assertive"`
 
-The "assertive" value, or a role that is implicitly "assertive", should be used for critical updates to the page that a user should know immediately.
-
-When a live region has the `aria-live="assertive"` attribute, or a role which is implicitly "assertive", the screen reader will usually interrupt whatever it is announcing to announce the "assertive" content. The "assertive" live region should be using sparingly and with caution, as it can be annoying and disruptive to a user.
-
-According to [accessibilityresources.org](https://accessibilityresources.org/aria-live), the "assertive" value does not work properly in NVDA or JAWS, so it may be better to use a `role` that is implicitly assertive when needed instead (such as `role="alert"`).
-
 Using the same example in the `aria-live="polite"` section above, the HTML gets changed to:
 
 <br>
@@ -80,11 +62,9 @@ If the `role="alert"` attribute was placed on the `<p>` element instead, the ent
 
 ## `aria-atomic`
 
-The `aria-atomic` attribute determines whether or not the entirety of a live region is announced when an update occurs, rather than just the element inside the live region. Checkout [Basic examples: aria-atomic](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Live_Regions#basic-examples-aria-atomic) to see a couple of other examples that use the attribute.
-
 From the `aria-live="polite"` example above, only the contents of the dynamic paragraph was announced by the screen reader. With `aria-atomic="true"`:
 
-<br>
+<br><br>
 
     <p aria-live="polite" aria-atomic="true">My favorite paragraph is <span id="dynamic-paragraph">red</span></p>
     <button type="button" id="timer-button">Click to Start Timer</button>

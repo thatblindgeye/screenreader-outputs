@@ -1,12 +1,6 @@
+# ARIA Labels
+
 ## `aria-label`
-
-The `aria-label` attribute labels an element with the specified string when there is no visible label on the page. This can override any native labeling on the element.
-
-Per [Using the aria-label attribute](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-label_attribute), the `aria-label` attribute should only be used on interactive elements (buttons, checkboxes, etc.), landmark elements (main, nav, etc.), elements with an explicit widget role, and `iframe` or `img` elements.
-
-According to [HTML 5 and ARIA Landmarks](https://dequeuniversity.com/assets/html/jquery-summit/html5/slides/landmarks.html), the `<article>` and `<region>` elements are not considered ARIA landmarks and will be unaffected by the `aria-label` attribute.
-
-<br><br>
 
 ### `<div>` Element with Text Content
 
@@ -117,12 +111,6 @@ The screen reader announced "bullet" before each list item due to the CSS for th
 
 ## `aria-labelledby`
 
-The `aria-labelledby` attribute is similar to the `aria-label` attribute, except it requires creating a relationship between elements with ID's. Think of the `aria-labelledby` attribute as being similar to the `<label>` element linking itself with a form input with the `for` attribute.
-
-When you use the `aria-labelledby` attribute, you pass in the ID's of the elements that will label it as strings, e.g. `aria-labelledby="first-label"`. You can enter more than one element within the attribute, separated by spaces, similar to how the `class` attribute can have multiple classes entered.
-
-This attribute should be used to convey essential information to the user. It also overrides all other labels for an element, including `aria-label` and the native `<label>` tag (the `<label>` tag is only overridden when tabbing to give the input focus, otherwise the native `<label>` gets announced normally).
-
 <br><br>
 
 ### Single Label on Multiple Inputs
@@ -199,8 +187,6 @@ This attribute should be used to convey essential information to the user. It al
 <br>
 
 ## `aria-describedby`
-
-The `aria-describedby` attribute works similarly to the `aria-labelledby` attribute by creating a relationship between elements using ID's. Unlike `aria-labelledby`, hwoever, `aria-describedby` conveys additional information that might be useful to a user, and will be announced in addition to any other label on the element.
 
 <br><br>
 
