@@ -2,8 +2,6 @@
 
 ## Table of Contents
 
-[The Accessibility Tree and `aria-hidden`](https://github.com/thatblindgeye/screenreader-outputs/blob/main/html%20with%20aria/accessibility_tree_and_aria_hidden.md)
-<br>
 [Roles, State, and Properties](https://github.com/thatblindgeye/screenreader-outputs/blob/main/html%20with%20aria/roles-state-properties.md)
 <br>
 [ARIA Labels](https://github.com/thatblindgeye/screenreader-outputs/blob/main/html%20with%20aria/aria-labels.md)
